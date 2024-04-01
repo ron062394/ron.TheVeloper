@@ -9,6 +9,9 @@ import StacksSection from './Pages/StacksSection';
 function App() {
   return (
     <div className="App">
+      <Navbar/>
+      <Home/>
+      <StacksSection/>
       <ProjecSection/>
     </div>
   );

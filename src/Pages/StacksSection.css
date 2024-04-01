@@ -1,0 +1,56 @@
+.stacks-section {
+    background-color: rgb(34, 34, 34);
+    background-image: radial-gradient(
+      rgba(223, 223, 223, 0.1) 1px, 
+      transparent 1px
+    );
+    background-position: 50% 50%;
+    background-size: 1.1rem 1.1rem;
+    overflow: hidden;
+    padding: 100px 400px;
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+
+
+.stack-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10rem 10rem 10rem;
+    grid-gap: 1rem;
+}
+
+.item {
+    height: 100%;
+}
+
+
+.item1 {
+    grid-area: 1 / 1 / 2 / 3;
+    background-color: #046FAC;
+}
+
+
+.item2 {
+    background-color: aliceblue;
+    color: darkslategray;
+}
+
+.item3 {
+    background-color: aliceblue;
+    color: darkslategray;
+}
+.item4 {
+    grid-area: 2 / 2 / 3 / 4;
+    background-color: #03A185;
+}
+
+.item5 {
+    grid-area: 3 / 1 / 4 / 3;
+    background-color:#EA8787 ;
+}
+
+.item6 {
+    background-color: aliceblue;
+    color: darkslategray;
+}
