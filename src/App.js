@@ -1,19 +1,28 @@
-import ProjectCard from './components/ProjectCard'
-import Socials from './components/Linkedin'
-import Stacks from './components/Stacks/Frontend';
-import Navbar from './components/Navbar';
-import Home from './Pages/Home';
-import ProjecSection from './Pages/ProjecSection';
-import StacksSection from './Pages/StacksSection';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Stacks from './components/Stacks';
+import Projects from './components/Projects';
+import Footer from './components/Footer';
+import ContactMe from './components/ContactMe';
+import AboutMe from './components/AboutMe';
+import Services from './components/Services';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Home/>
-      <StacksSection/>
-      <ProjecSection/>
-    </div>
+    <Router>
+      <div className="App bg-gradient-to-br from-blue-50 to-purple-50 to-green-50 min-h-screen">
+        <Header />
+        <Hero />
+        <AboutMe />
+        <Stacks />
+        <Projects />
+        <Services />
+        <ContactMe />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
