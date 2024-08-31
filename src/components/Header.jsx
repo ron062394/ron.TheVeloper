@@ -43,10 +43,18 @@ const Header = () => {
         transition={{ duration: 0.3 }}
         className={`transition-all duration-300 ${isScrolled ? 'shadow-md py-2' : 'py-4'}`}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 transition duration-300">
-              The.Veloper-Ron
+        <div className="container mx-auto px-4 relative">
+          {/* Yellow shapes background */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 left-0 w-16 h-16 bg-yellow-300 rounded-full opacity-20 transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute top-1/2 right-0 w-24 h-24 bg-yellow-200 rounded-full opacity-15 transform translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute bottom-0 left-1/4 w-20 h-20 bg-yellow-400 rounded-full opacity-10 transform -translate-y-1/2"></div>
+          </div>
+
+          <div className="flex items-center justify-between relative z-10">
+            <Link to="/" className="text-2xl font-bold text-white hover:text-gray-200 transition duration-300 relative group">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300">The.Veloper-Ron</span>
+              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </Link>
 
             <div className="hidden lg:flex items-center space-x-8">
@@ -66,10 +74,10 @@ const Header = () => {
                 Services
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <Link to="/resume" className="px-4 py-2 text-sm font-bold bg-white rounded-full hover:bg-blue-600 hover:text-white transition duration-300 border border-blue-600 text-blue-600">
+              <Link to="/resume" className="px-4 py-2 text-sm font-bold bg-transparent rounded-full hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-[#D9584F] text-gray-700">
                 Resume/CV
               </Link>
-              <a href="#contact-me" className="px-4 py-2 text-sm text-white font-bold rounded-full hover:bg-gradient-to-r hover:from-blue-700 hover:to-teal-600 transition duration-300 bg-gradient-to-r from-blue-600 to-teal-500">
+              <a href="#contact-me" className="px-4 py-2 text-sm text-white font-bold rounded-full hover:bg-[#E06A62] transition duration-300 bg-[#D9584F]">
                 Contact Me
               </a>
             </div>

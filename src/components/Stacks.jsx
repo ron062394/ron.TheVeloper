@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaGithub, FaLinkedin, FaFigma, FaDatabase } from 'react-icons/fa';
 import { SiTailwindcss, SiExpress, SiMongodb, SiDjango, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
 import { BsGit } from 'react-icons/bs';
-import { MdDataUsage } from 'react-icons/md';
 import { GrWorkshop } from 'react-icons/gr';
 
 const Stacks = () => {
