@@ -15,7 +15,6 @@ function App() {
       <div className="App bg-gradient-to-br from-blue-50 to-purple-50 to-green-50 min-h-screen">
         <Header />
         <Hero />
-        <AboutMe />
         <Stacks />
         <Projects />
         <Services />

@@ -29,14 +29,23 @@ const Stacks = () => {
   };
 
   return (
-    <section id="stacks" className="bg-[#222] bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] overflow-hidden py-24">
+    <section id="stacks" className="bg-gray-900 bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] overflow-hidden py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 
-          className="text-4xl font-extrabold text-center text-white mb-12"
+        <motion.div 
+          className="text-center mb-12"
           variants={itemVariants}
         >
-          My Tech Stack
-        </motion.h2>
+          <h2 className="text-4xl font-extrabold text-white inline-block">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FEDE00] to-[#3D6B4F]">
+              My Digital Arsenal
+            </span>
+          </h2>
+          <div className="mt-2 flex justify-center items-center space-x-2">
+            <div className="h-1 w-12 bg-[#FEDE00]"></div>
+            <span className="text-gray-400 text-lg">&lt;Code&gt;</span>
+            <div className="h-1 w-12 bg-[#3D6B4F]"></div>
+          </div>
+        </motion.div>
         <motion.div 
           className="grid grid-cols-3 grid-rows-3 gap-4 h-[30rem]"
           variants={containerVariants}
@@ -45,7 +54,7 @@ const Stacks = () => {
         >
           <motion.div 
             variants={itemVariants} 
-            className="col-span-2 bg-[#046FAC] flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
+            className="col-span-2 bg-[#3D6B4F] flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
           >
             <div className="flex-1 flex flex-col items-center justify-center p-6">
               <span className="text-3xl font-bold mb-4 text-white">Full Stack {"</>"}</span>
@@ -82,7 +91,7 @@ const Stacks = () => {
           </motion.div>
           <motion.div 
             variants={itemVariants} 
-            className="bg-gray-100 text-gray-700 flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
+            className="bg-white text-gray-700 flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
           >
             <div className="flex-1 flex flex-col items-center justify-center p-6">
               <span className="text-2xl font-semibold mb-4">Styling</span>
@@ -111,7 +120,7 @@ const Stacks = () => {
           </motion.div>
           <motion.div 
             variants={itemVariants} 
-            className="bg-gray-100 text-gray-700 flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
+            className="bg-white text-gray-700 flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
           >
             <div className="flex-1 flex flex-col items-center justify-center p-6">
               <span className="text-2xl font-semibold mb-4">Version Control</span>
@@ -132,7 +141,7 @@ const Stacks = () => {
           </motion.div>
           <motion.div 
             variants={itemVariants} 
-            className="col-start-2 col-span-2 bg-[#03A185] flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
+            className="col-start-2 col-span-2 bg-[#355C44] flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
           >
             <div className="flex-1 flex flex-col items-center justify-center p-6">
               <span className="text-3xl font-bold mb-4 text-white">Frontend {"{}"}</span>
@@ -157,22 +166,22 @@ const Stacks = () => {
           </motion.div>
           <motion.div 
             variants={itemVariants} 
-            className="col-span-2 bg-[#EA8787] flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
+            className="col-span-2 bg-[#FEDE00] flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
           >
             <div className="flex-1 flex flex-col items-center justify-center p-6">
-              <span className="text-3xl font-bold mb-4 text-white">Backend</span>
+              <span className="text-3xl font-bold mb-4 text-[#355C44]">Backend</span>
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
-                  <FaNodeJs size={30} className="text-white" />
-                  <span className="text-white text-xs mt-1">NodeJS</span>
+                  <FaNodeJs size={30} className="text-[#355C44]" />
+                  <span className="text-[#355C44] text-xs mt-1">NodeJS</span>
                 </div>
                 <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
-                  <SiExpress size={30} className="text-white" />
-                  <span className="text-white text-xs mt-1">ExpressJS</span>
+                  <SiExpress size={30} className="text-[#355C44]" />
+                  <span className="text-[#355C44] text-xs mt-1">ExpressJS</span>
                 </div>
                 <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
-                  <SiDjango size={30} className="text-white" />
-                  <span className="text-white text-xs mt-1">Django</span>
+                  <SiDjango size={30} className="text-[#355C44]" />
+                  <span className="text-[#355C44] text-xs mt-1">Django</span>
                 </div>
               </div>
             </div>
@@ -182,7 +191,7 @@ const Stacks = () => {
           </motion.div>
           <motion.div 
             variants={itemVariants} 
-            className="bg-gray-100 text-gray-700 flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
+            className="bg-white text-gray-700 flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
           >
             <div className="flex-1 flex flex-col items-center justify-center p-6">
               <span className="text-2xl font-semibold mb-4">Database & Analytics</span>
@@ -195,7 +204,6 @@ const Stacks = () => {
                   <FaDatabase size={30} />
                   <span className="text-xs mt-1">SQL</span>
                 </div>
-
               </div>
             </div>
             <div className="flex-1 bg-gray-300">
@@ -205,7 +213,7 @@ const Stacks = () => {
         </motion.div>
         <motion.div 
           variants={itemVariants} 
-          className="mt-8 p-4 bg-gray-800 rounded-lg shadow-lg text-center hover:bg-gray-700 transition-colors duration-300"
+          className="mt-8 p-4 bg-[#3D6B4F] rounded-lg shadow-lg text-center hover:bg-[#355C44] transition-colors duration-300"
         >
           <div className="flex items-center justify-center space-x-4">
             <GrWorkshop size={30} className="text-white" />
@@ -217,10 +225,10 @@ const Stacks = () => {
           className="mt-4 flex justify-center space-x-8"
         >
           <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300">
-            <FaLinkedin size={40} className="text-blue-500 hover:text-blue-600 transition-colors duration-300" />
+            <FaLinkedin size={40} className="text-[#FEDE00] hover:text-[#FFE433] transition-colors duration-300" />
           </a>
           <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300">
-            <FaGithub size={40} className="text-gray-300 hover:text-white transition-colors duration-300" />
+            <FaGithub size={40} className="text-[#FEDE00] hover:text-[#FFE433] transition-colors duration-300" />
           </a>
         </motion.div>
       </div>

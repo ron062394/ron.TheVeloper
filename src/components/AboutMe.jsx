@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLaptopCode, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
+import { FaLaptopCode, FaGraduationCap, FaBriefcase, FaChevronRight, FaDownload, FaCertificate } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 const AboutMe = () => {
   const containerVariants = {
@@ -27,52 +32,159 @@ const AboutMe = () => {
   return (
     <motion.section 
       id="about"
-      className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4 sm:px-6 lg:px-8"
+      className="bg-gradient-to-br from-blue-100 to-purple-100 py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2 
-          className="text-4xl font-extrabold text-center text-gray-900 mb-12"
+          className="text-5xl font-extrabold text-center text-gray-800 mb-16 relative"
           variants={itemVariants}
         >
-          About Me
+          My Journey
+          <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-blue-500"></span>
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 shadow-lg">
-            <FaLaptopCode className="text-4xl text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Passionate Developer</h3>
-            <p className="text-gray-600">
-              With a keen eye for detail and a love for clean, efficient code, I strive to create seamless user experiences through innovative web solutions.
-            </p>
-          </motion.div>
-          <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 shadow-lg">
-            <FaGraduationCap className="text-4xl text-green-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Continuous Learner</h3>
-            <p className="text-gray-600">
-              In the ever-evolving world of tech, I'm committed to staying ahead of the curve, constantly expanding my skillset and exploring new technologies.
-            </p>
-          </motion.div>
-          <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 shadow-lg">
-            <FaBriefcase className="text-4xl text-purple-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Business Acumen</h3>
-            <p className="text-gray-600">
-              Combining my technical expertise with a strong business background, I bring a unique perspective to every project, ensuring solutions that are not just functional, but strategically aligned.
-            </p>
-          </motion.div>
-        </div>
-        <motion.div variants={itemVariants} className="mt-12 text-center">
-          <p className="text-xl text-gray-700 mb-6">
-            I'm Ron Cabatuando, a fullstack developer with a passion for creating robust, user-centric web applications. With a background in both technology and business, I bring a holistic approach to every project I undertake.
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          spaceBetween={30}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+        >
+          <SwiperSlide>
+            <motion.div variants={itemVariants} className="bg-white rounded-3xl p-8 shadow-xl transform hover:scale-105 transition duration-300 relative overflow-hidden group h-full">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-110 transition-transform duration-300"></div>
+              <div className="relative">
+                <FaGraduationCap className="text-5xl text-blue-600 mb-6 group-hover:animate-bounce" />
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Education</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <p className="font-semibold text-gray-700">Bachelor of Science in Business Administration</p>
+                    <p className="text-gray-600">Nueva Ecija University of Science and Technology</p>
+                    <p className="text-blue-500">2013 - 2017</p>
+                  </li>
+                  <li>
+                    <p className="font-semibold text-gray-700">Information Technology</p>
+                    <p className="text-gray-600">Gapan Computer & Technical Institute</p>
+                    <p className="text-blue-500">2011 - 2013</p>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <motion.div variants={itemVariants} className="bg-white rounded-3xl p-8 shadow-xl transform hover:scale-105 transition duration-300 relative overflow-hidden group h-full">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-200 rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-110 transition-transform duration-300"></div>
+              <div className="relative">
+                <FaLaptopCode className="text-5xl text-green-600 mb-6 group-hover:animate-pulse" />
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Technical Experience</h3>
+                <div>
+                  <p className="font-semibold text-gray-700">Software Engineering Bootcamp Instructor & Team Lead</p>
+                  <p className="text-gray-600">Onecodecamp, Sydney, Australia (Remote)</p>
+                  <p className="text-green-500">April 2023 - August 2024</p>
+                  <ul className="mt-4 space-y-2">
+                    <li className="flex items-start">
+                      <FaChevronRight className="text-green-500 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600">Leading and mentoring aspiring software engineers</span>
+                    </li>
+                    <li className="flex items-start">
+                      <FaChevronRight className="text-green-500 mt-1 mr-2 flex-shrink-0" />
+                      <span className="text-gray-600">Developing and implementing curriculum</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <motion.div variants={itemVariants} className="bg-white rounded-3xl p-8 shadow-xl transform hover:scale-105 transition duration-300 relative overflow-hidden group h-full">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-200 rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-110 transition-transform duration-300"></div>
+              <div className="relative">
+                <FaBriefcase className="text-5xl text-purple-600 mb-6 group-hover:animate-spin" />
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Managerial Experience</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <p className="font-semibold text-gray-700">System Administrator & Department Head</p>
+                    <p className="text-gray-600">Supersteel Metal Systems, Nueva Ecija, Philippines</p>
+                    <p className="text-purple-500">March 2020 - May 2021</p>
+                  </li>
+                  <li>
+                    <p className="font-semibold text-gray-700">Officer-in-Charge</p>
+                    <p className="text-gray-600">Max's Restaurant, The Yellowbeak Inc.</p>
+                    <p className="text-purple-500">Aug 2019 - Feb 2020, Jun 2021 - Nov 2022</p>
+                  </li>
+                  <li>
+                    <p className="font-semibold text-gray-700">Assistant Restaurant Manager</p>
+                    <p className="text-gray-600">Jollibee Foods Corporation</p>
+                    <p className="text-purple-500">July 2017 - May 2019</p>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <motion.div variants={itemVariants} className="bg-white rounded-3xl p-8 shadow-xl transform hover:scale-105 transition duration-300 relative overflow-hidden group h-full">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-200 rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-110 transition-transform duration-300"></div>
+              <div className="relative">
+                <FaCertificate className="text-5xl text-yellow-600 mb-6 group-hover:animate-pulse" />
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Certifications & Trainings</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <p className="font-semibold text-gray-700">OneCodeCamp Developer Training Bootcamp</p>
+                    <p className="text-yellow-500">Completed 2023</p>
+                  </li>
+                  <li>
+                    <p className="font-semibold text-gray-700">Certified Civil Service Passer - Professional</p>
+                    <p className="text-yellow-500">Awarded 2017</p>
+                  </li>
+                  <li>
+                    <p className="font-semibold text-gray-700">Computer & Hardware Servicing (NCII)</p>
+                    <p className="text-yellow-500">Completed 2023</p>
+                  </li>
+                  <li>
+                    <p className="font-semibold text-gray-700">Best in Thesis | SMS Votes Tally System</p>
+                    <p className="text-yellow-500">Awarded 2013</p>
+                  </li>
+                  <li>
+                    <p className="font-semibold text-gray-700">Programmer of the year</p>
+                    <p className="text-gray-600">Gapan Computer & Technical Institute</p>
+                    <p className="text-yellow-500">Awarded 2013</p>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </SwiperSlide>
+        </Swiper>
+        <motion.div variants={itemVariants} className="mt-16 text-center">
+          <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+            As a fullstack developer with a diverse background spanning technology, business administration, and management, 
+            I bring a unique perspective to every project. My multifaceted experience enables me to craft innovative solutions 
+            that are not only technically robust but also strategically aligned with business objectives.
           </p>
-          <motion.button
-            className="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+          <motion.a
+            href="/path-to-your-resume.pdf"
+            download
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-lg hover:from-blue-600 hover:to-purple-600 transition duration-300 text-lg font-semibold group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Download Resume
-          </motion.button>
+            <FaDownload className="mr-2 group-hover:animate-bounce" />
+            Download Full Resume
+          </motion.a>
         </motion.div>
       </div>
     </motion.section>

@@ -52,9 +52,9 @@ const Header = () => {
           </div>
 
           <div className="flex items-center justify-between relative z-10">
-            <Link to="/" className="text-2xl font-bold text-white hover:text-gray-200 transition duration-300 relative group">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300">The.Veloper-Ron</span>
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+            <Link to="/" className={`text-2xl font-bold transition duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'}`}>
+              <span className={`${isScrolled ? 'text-gray-700' : 'bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300'}`}>The.Veloper-Ron</span>
+              <span className={`absolute left-0 bottom-0 w-0 h-0.5 ${isScrolled ? 'bg-gray-700' : 'bg-white'} transition-all duration-300 group-hover:w-full`}></span>
             </Link>
 
             <div className="hidden lg:flex items-center space-x-8">
@@ -74,10 +74,10 @@ const Header = () => {
                 Services
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <Link to="/resume" className="px-4 py-2 text-sm font-bold bg-transparent rounded-full hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-[#D9584F] text-gray-700">
+              <Link to="/resume" className="px-4 py-2 text-sm font-bold bg-transparent rounded-full hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-700 text-gray-700">
                 Resume/CV
               </Link>
-              <a href="#contact-me" className="px-4 py-2 text-sm text-white font-bold rounded-full hover:bg-[#E06A62] transition duration-300 bg-[#D9584F]">
+              <a href="#contact-me" className="px-4 py-2 text-sm text-white font-bold rounded-full hover:bg-[#E06A62] transition duration-300 bg-gray-900">
                 Contact Me
               </a>
             </div>

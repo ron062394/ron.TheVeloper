@@ -47,8 +47,8 @@ const Hero = () => {
       variants={containerVariants}
     >
       <div className="absolute inset-0">
-        <div className="h-full w-1/2 bg-[#355C44] float-left"></div>
-        <div className="h-full w-1/2 bg-[#F7F5EC] float-right"></div>
+        <div className="h-full w-1/2 bg-gray-900 float-left bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem]"></div>
+        <div className="h-full w-1/2 bg-white float-right"></div>
       </div>
       <motion.div 
         className="absolute inset-0 flex items-center justify-center text-[20vw] font-extrabold text-[#3D6B4F] whitespace-nowrap opacity-10 pointer-events-none"
