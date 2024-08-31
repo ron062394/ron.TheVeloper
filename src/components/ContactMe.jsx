@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 const ContactMe = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +16,26 @@ const ContactMe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    emailjs.init("Lyv3M_31JlinMbp1e"); // Replace with your actual EmailJS user ID
+    emailjs.send(
+      'service_en973fn', // Replace with your EmailJS service ID
+      'template_ot66xyr', // Replace with your EmailJS template ID
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'ron062394@gmail.com'
+      }
+    )
+    .then((response) => {
+      console.log('Email sent successfully:', response);
+      setFormData({ name: '', email: '', message: '' });
+      alert('Message sent successfully!');
+    })
+    .catch((error) => {
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again.');
+    });
   };
 
   const containerVariants = {
@@ -110,21 +129,21 @@ const ContactMe = () => {
               <FaEnvelope className="text-2xl text-blue-600" />
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                <p className="text-gray-600">contact@roncabatuando.com</p>
+                <p className="text-gray-600">ron062394@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <FaPhone className="text-2xl text-blue-600" />
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                <p className="text-gray-600">+1 (123) 456-7890</p>
+                <p className="text-gray-600">+63 920-938-7622</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <FaMapMarkerAlt className="text-2xl text-blue-600" />
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Location</h3>
-                <p className="text-gray-600">San Francisco, CA</p>
+                <p className="text-gray-600">Gapan City, Nueva Ecija, 3105, Philippines</p>
               </div>
             </div>
             <motion.div 
