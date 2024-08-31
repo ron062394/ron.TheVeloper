@@ -30,7 +30,7 @@ const Stacks = () => {
   };
 
   return (
-    <section className="bg-[#222] bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] overflow-hidden py-24">
+    <section id="stacks" className="bg-[#222] bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] overflow-hidden py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           className="text-4xl font-extrabold text-center text-white mb-12"

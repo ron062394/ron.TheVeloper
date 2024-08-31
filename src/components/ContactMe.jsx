@@ -61,6 +61,7 @@ const ContactMe = () => {
 
   return (
     <motion.section 
+      id="contact-me"
       className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4 sm:px-6 lg:px-8"
       initial="hidden"
       animate="visible"

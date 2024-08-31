@@ -186,7 +186,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4 md:px-8 lg:px-16">
+    <section id="projects" className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4 md:px-8 lg:px-16">
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Featured Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {projects.map((project, index) => (

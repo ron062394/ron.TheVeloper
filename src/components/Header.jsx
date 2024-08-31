@@ -50,18 +50,28 @@ const Header = () => {
             </Link>
 
             <div className="hidden lg:flex items-center space-x-8">
-              {['About', 'Projects', 'Technologies', 'Services'].map((item, index) => (
-                <Link key={index} to={`/${item.toLowerCase()}`} className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
-                  {item}
-                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              ))}
+              <a href="#about" className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
+                About
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#projects" className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
+                Projects
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#stacks" className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
+                Technologies
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#services" className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
+                Services
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
               <Link to="/resume" className="px-4 py-2 text-sm font-bold bg-white rounded-full hover:bg-blue-600 hover:text-white transition duration-300 border border-blue-600 text-blue-600">
                 Resume/CV
               </Link>
-              <Link to="/contact" className="px-4 py-2 text-sm text-white font-bold rounded-full hover:bg-gradient-to-r hover:from-blue-700 hover:to-teal-600 transition duration-300 bg-gradient-to-r from-blue-600 to-teal-500">
+              <a href="#contact-me" className="px-4 py-2 text-sm text-white font-bold rounded-full hover:bg-gradient-to-r hover:from-blue-700 hover:to-teal-600 transition duration-300 bg-gradient-to-r from-blue-600 to-teal-500">
                 Contact Me
-              </Link>
+              </a>
             </div>
 
             <button className="lg:hidden text-gray-700 focus:outline-none" onClick={toggleMobileMenu}>
@@ -81,17 +91,42 @@ const Header = () => {
             </svg>
           </button>
           <ul className="space-y-4 mt-8">
-            {['About', 'Projects', 'Technologies', 'Services'].map((item, index) => (
-              <li key={index}>
-                <Link 
-                  to={`/${item.toLowerCase()}`} 
-                  className="block text-lg font-bold text-gray-700 hover:text-blue-600 transition duration-300"
-                  onClick={toggleMobileMenu}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <a 
+                href="#about" 
+                className="block text-lg font-bold text-gray-700 hover:text-blue-600 transition duration-300"
+                onClick={toggleMobileMenu}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#projects" 
+                className="block text-lg font-bold text-gray-700 hover:text-blue-600 transition duration-300"
+                onClick={toggleMobileMenu}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#stacks" 
+                className="block text-lg font-bold text-gray-700 hover:text-blue-600 transition duration-300"
+                onClick={toggleMobileMenu}
+              >
+                Technologies
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#services" 
+                className="block text-lg font-bold text-gray-700 hover:text-blue-600 transition duration-300"
+                onClick={toggleMobileMenu}
+              >
+                Services
+              </a>
+            </li>
           </ul>
           <div className="mt-8 space-y-4">
             <Link 
@@ -101,13 +136,13 @@ const Header = () => {
             >
               Resume/CV
             </Link>
-            <Link 
-              to="/contact" 
+            <a 
+              href="#contact-me" 
               className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold rounded-full hover:bg-gradient-to-r hover:from-blue-700 hover:to-teal-600 transition duration-300 bg-gradient-to-r from-blue-600 to-teal-500"
               onClick={toggleMobileMenu}
             >
               Contact Me
-            </Link>
+            </a>
           </div>
         </div>
       </div>
