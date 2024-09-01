@@ -86,7 +86,7 @@ const Stacks = () => {
               </div>
             </div>
             <div className="flex-1 bg-gray-700">
-              <img src="https://via.placeholder.com/300x300" alt="Full Stack" className="w-full h-full object-cover" />
+              <img src="https://futureskillsprime.in//sites/default/files/2021-06/Link%20Sharing-Foundation%20Full%20Stack%20Web%20Development.jpg" alt="Full Stack" className="w-full h-full object-cover" />
             </div>
           </motion.div>
           <motion.div 
@@ -129,7 +129,7 @@ const Stacks = () => {
               </div>
             </div>
             <div className="flex-1 bg-gray-700">
-              <img src="https://via.placeholder.com/300x300" alt="Version Control" className="w-full h-full object-cover" />
+              <img src="https://wallpaperaccess.com/full/3415007.jpg" alt="Version Control" className="w-full h-full object-cover" />
             </div>
           </motion.div>
           <motion.div 
@@ -154,7 +154,7 @@ const Stacks = () => {
               </div>
             </div>
             <div className="flex-1 bg-gray-700">
-              <img src="https://via.placeholder.com/300x300" alt="Frontend" className="w-full h-full object-cover" />
+              <img src="https://b1777247.smushcdn.com/1777247/wp-content/uploads/2023/05/responsive-design-and-web-devices-1024x680.jpg?lossy=2&strip=1&webp=1" alt="Frontend" className="w-full h-full object-cover" />
             </div>
           </motion.div>
           <motion.div 
@@ -179,7 +179,7 @@ const Stacks = () => {
               </div>
             </div>
             <div className="flex-1 bg-gray-700">
-              <img src="https://via.placeholder.com/300x300" alt="Backend" className="w-full h-full object-cover" />
+              <img src="https://images.shiksha.com/mediadata/ugcDocuments/images/wordpressImages/2021_12_backend-development-1-1.jpg" alt="Backend" className="w-full h-full object-cover" />
             </div>
           </motion.div>
           <motion.div 
