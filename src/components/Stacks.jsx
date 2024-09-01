@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaGithub, FaLinkedin, FaFigma, FaDatabase } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaFigma, FaDatabase } from 'react-icons/fa';
 import { SiTailwindcss, SiExpress, SiMongodb, SiDjango, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
 import { BsGit } from 'react-icons/bs';
 import { GrWorkshop } from 'react-icons/gr';
@@ -126,10 +126,6 @@ const Stacks = () => {
                   <BsGit size={30} className="text-[#FEDE00]" />
                   <span className="text-xs mt-1">Git</span>
                 </div>
-                <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
-                  <FaGithub size={30} className="text-[#FEDE00]" />
-                  <span className="text-xs mt-1">GitHub</span>
-                </div>
               </div>
             </div>
             <div className="flex-1 bg-gray-700">
@@ -213,17 +209,6 @@ const Stacks = () => {
             <GrWorkshop size={30} className="text-[#FEDE00]" />
             <span className="text-xl font-semibold text-white">Fully-equipped remote set-up (Equipment & internet connection)</span>
           </div>
-        </motion.div>
-        <motion.div 
-          variants={itemVariants} 
-          className="mt-4 flex justify-center space-x-8"
-        >
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300">
-            <FaLinkedin size={40} className="text-[#FEDE00] hover:text-[#FFE433] transition-colors duration-300" />
-          </a>
-          <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-transform duration-300">
-            <FaGithub size={40} className="text-[#FEDE00] hover:text-[#FFE433] transition-colors duration-300" />
-          </a>
         </motion.div>
       </div>
     </section>
