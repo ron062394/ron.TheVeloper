@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 
 const ContactMe = () => {
@@ -59,129 +59,126 @@ const ContactMe = () => {
     }
   };
 
-  const backgroundTextVariants = {
-    animate: {
-      x: [300, -200, 300],
-      transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: 20,
-          ease: "linear",
-        },
-      },
-    },
-  };
-
   return (
-    <motion.section 
-      id="contact-me"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden relative bg-white"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <motion.div 
-        className="absolute inset-0 flex items-center justify-center text-[20vw] font-extrabold text-[#3D6B4F] whitespace-nowrap opacity-10 pointer-events-none"
-        variants={backgroundTextVariants}
-        animate="animate"
-      >
-        CONTACT ME
-      </motion.div>
-      <div className="max-w-7xl w-full space-y-12 relative z-10">
-        <motion.h2 
-          className="text-5xl font-extrabold text-center text-gray-900 mb-12"
-          variants={itemVariants}
+    <section id="contact-me" className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          Get in Touch
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <motion.div variants={itemVariants}>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FEDE00] focus:ring-[#FEDE00] bg-white text-gray-900"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FEDE00] focus:ring-[#FEDE00] bg-white text-gray-900"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FEDE00] focus:ring-[#FEDE00] bg-white text-gray-900"
-                ></textarea>
-              </div>
-              <div>
-                <motion.button
-                  type="submit"
-                  className="w-full flex justify-center py-4 px-8 border border-transparent rounded-full shadow-lg text-[#355C44] font-semibold bg-[#FEDE00] hover:bg-[#FFE433] transition duration-300 ease-in-out"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Send Message
-                </motion.button>
-              </div>
-            </form>
-          </motion.div>
-          <motion.div variants={itemVariants} className="space-y-8 text-gray-700">
-            <div className="flex items-center space-x-4">
-              <FaEnvelope className="text-2xl text-[#3D6B4F]" />
-              <div>
-                <h3 className="text-lg font-medium">Email</h3>
-                <p className="text-gray-600">ron062394@gmail.com</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FaPhone className="text-2xl text-[#3D6B4F]" />
-              <div>
-                <h3 className="text-lg font-medium">Phone</h3>
-                <p className="text-gray-600">+63 920-938-7622</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FaMapMarkerAlt className="text-2xl text-[#3D6B4F]" />
-              <div>
-                <h3 className="text-lg font-medium">Location</h3>
-                <p className="text-gray-600">Gapan City, Nueva Ecija, 3105, Philippines</p>
-              </div>
-            </div>
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-6 text-gray-800"
+            variants={itemVariants}
+          >
+            Get in Touch
+          </motion.h2>
+          <motion.p
+            className="text-xl text-gray-600 text-center mb-12"
+            variants={itemVariants}
+          >
+            Have a question or want to work together? Let's connect!
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div 
-              className="mt-8 p-6 bg-gray-100 rounded-lg shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-white rounded-xl p-6 shadow-lg"
+              variants={itemVariants}
             >
-              <h3 className="text-xl font-semibold text-[#355C44] mb-4">Let's Connect!</h3>
-              <p className="text-gray-700">
-                I'm always open to new opportunities and collaborations. Whether you have a project in mind or just want to say hello, feel free to reach out!
-              </p>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">Contact Form</h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  ></textarea>
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
             </motion.div>
-          </motion.div>
-        </div>
+            <motion.div 
+              className="bg-white rounded-xl p-6 shadow-lg"
+              variants={itemVariants}
+            >
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">Contact Information</h3>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <FaEnvelope className="text-blue-500 mr-2" />
+                  <span>ron062394@gmail.com</span>
+                </div>
+                <div className="flex items-center">
+                  <FaPhone className="text-blue-500 mr-2" />
+                  <span>+63 920-938-7622</span>
+                </div>
+                <div className="flex items-center">
+                  <FaMapMarkerAlt className="text-blue-500 mr-2" />
+                  <span>Gapan City, Nueva Ecija, 3105, Philippines</span>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                <p className="text-blue-700">
+                  I'm always open to new opportunities and collaborations. Whether you have a project in mind or just want to say hello, feel free to reach out!
+                </p>
+              </div>
+              <div className="mt-6">
+                <h4 className="text-xl font-bold mb-4 text-gray-800">Or contact me via</h4>
+                <div className="flex space-x-4">
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    <FaLinkedin size={24} />
+                  </a>
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    <FaFacebook size={24} />
+                  </a>
+                  <a href="#" className="text-pink-600 hover:text-pink-800">
+                    <FaInstagram size={24} />
+                  </a>
+                  <a href="#" className="text-black hover:text-gray-800">
+                    <FaTiktok size={24} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

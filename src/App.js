@@ -9,6 +9,10 @@ import ContactMe from './components/ContactMe';
 import AboutMe from './components/AboutMe';
 import Services from './components/Services';
 import Blogs from './components/Blogs';
+import Web3 from './components/Web3';
+import DataAnalytics from './components/DataAnalytics';
+import Games from './components/Games';
+
 
 function App() {
   return (
@@ -19,9 +23,13 @@ function App() {
         <Stacks />
         <Projects />
         <Services />
-        <ContactMe />
+        <Games />
+        <Web3 />
+        <DataAnalytics />
         <Blogs />	
+        <ContactMe />
         <Footer />
+
       </div>
     </Router>
   );
