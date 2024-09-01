@@ -51,14 +51,14 @@ const Hero = () => {
         <div className="h-full w-full md:w-1/2 bg-white float-none md:float-right hidden md:block"></div>
       </div>
       <motion.div 
-        className="absolute inset-0 flex items-center justify-center text-[15vw] md:text-[20vw] font-extrabold text-gray-500 whitespace-nowrap opacity-10 pointer-events-none mt-24"
+        className="absolute inset-0 flex items-center justify-center text-[15vw] md:text-[20vw] font-extrabold text-gray-500 whitespace-nowrap opacity-10 pointer-events-none"
         variants={backgroundTextVariants}
         animate="animate"
       >
         FULL STACK WEB DEVELOPER
       </motion.div>
       <div className="max-w-7xl w-full space-y-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center sm:m-24">
           <motion.div className="space-y-6 md:space-y-8" variants={itemVariants}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
               RON CABATUANDO
