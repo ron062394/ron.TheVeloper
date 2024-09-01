@@ -35,7 +35,7 @@ const Stacks = () => {
           className="text-center mb-12"
           variants={itemVariants}
         >
-          <h2 className="text-5xl font-extrabold text-white inline-block">
+          <h2 className="text-5xl font-extrabold text-white inline-block bg-gray-800 border-2 border-[#FEDE00] rounded-lg px-6 py-3">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FEDE00] to-[#FFE433]">
               My Digital Arsenal
             </span>

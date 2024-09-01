@@ -12,6 +12,8 @@ import Blogs from './components/Blogs';
 import Web3 from './components/Web3';
 import DataAnalytics from './components/DataAnalytics';
 import Games from './components/Games';
+import Divider from './components/divider';
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
       <div className="App bg-gradient-to-br from-blue-50 to-purple-50 to-green-50 min-h-screen">
         <Header />
         <Hero />
+        <Divider />
         <Stacks />
         <Projects />
         <Services />

@@ -74,9 +74,9 @@ const Header = () => {
                 Services
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <Link to="/resume" className="px-4 py-2 text-sm font-bold bg-transparent rounded-full hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-700 text-gray-700">
+              <a href="https://drive.google.com/file/d/174XwpjwF4odmXAPYYt1m77Bg23wW9SCx/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm font-bold bg-transparent rounded-full hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-700 text-gray-700">
                 Resume/CV
-              </Link>
+              </a>
               <a href="#contact-me" className="px-4 py-2 text-sm text-white font-bold rounded-full hover:bg-[#E06A62] transition duration-300 bg-gray-900">
                 Contact Me
               </a>
@@ -137,13 +137,15 @@ const Header = () => {
             </li>
           </ul>
           <div className="mt-8 space-y-4">
-            <Link 
-              to="/resume" 
+            <a 
+              href="https://drive.google.com/file/d/174XwpjwF4odmXAPYYt1m77Bg23wW9SCx/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block w-full px-4 py-2.5 text-sm text-center font-bold bg-white rounded-full hover:bg-blue-600 hover:text-white transition duration-300 border border-blue-600 text-blue-600"
               onClick={toggleMobileMenu}
             >
               Resume/CV
-            </Link>
+            </a>
             <a 
               href="#contact-me" 
               className="block w-full px-4 py-2.5 text-sm text-center text-white font-bold rounded-full hover:bg-gradient-to-r hover:from-blue-700 hover:to-teal-600 transition duration-300 bg-gradient-to-r from-blue-600 to-teal-500"
