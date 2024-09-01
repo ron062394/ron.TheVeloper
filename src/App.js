@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import ContactMe from './components/ContactMe';
 import AboutMe from './components/AboutMe';
 import Services from './components/Services';
+import Blogs from './components/Blogs';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Projects />
         <Services />
         <ContactMe />
+        <Blogs />	
         <Footer />
       </div>
     </Router>

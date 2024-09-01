@@ -51,7 +51,7 @@ const Hero = () => {
         <div className="h-full w-1/2 bg-white float-right"></div>
       </div>
       <motion.div 
-        className="absolute inset-0 flex items-center justify-center text-[20vw] font-extrabold text-[#3D6B4F] whitespace-nowrap opacity-10 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-center text-[20vw] font-extrabold text-gray-500 whitespace-nowrap opacity-10 pointer-events-none"
         variants={backgroundTextVariants}
         animate="animate"
       >
@@ -71,7 +71,7 @@ const Hero = () => {
             </p>
             <div className="flex space-x-6">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="px-8 py-4 bg-[#FEDE00] text-[#355C44] font-semibold rounded-full hover:bg-[#FFE433] transition duration-300 ease-in-out flex items-center space-x-2 shadow-lg">
+                <Link to="/contact" className="px-8 py-4 bg-[#FEDE00] text-gray-700 font-semibold rounded-full hover:bg-[#FFE433] transition duration-300 ease-in-out flex items-center space-x-2 shadow-lg">
                   <span>Contact me</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -80,7 +80,7 @@ const Hero = () => {
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a href="/path-to-your-cv.pdf" download className="px-8 py-4 bg-white text-[#355C44] font-semibold rounded-full hover:bg-gray-100 transition duration-300 ease-in-out flex items-center space-x-2 shadow-lg">
+                <a href="/path-to-your-cv.pdf" download className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition duration-300 ease-in-out flex items-center space-x-2 shadow-lg">
                   <span>Download CV</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
