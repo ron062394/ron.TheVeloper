@@ -58,8 +58,8 @@ const Header = () => {
             </Link>
 
             <div className="hidden lg:flex items-center space-x-8">
-              <a href="#about" className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
-                About
+              <a href="#blogs" className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
+                Blogs
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#projects" className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
@@ -101,11 +101,11 @@ const Header = () => {
           <ul className="space-y-4 mt-8">
             <li>
               <a 
-                href="#about" 
+                href="#blogs" 
                 className="block text-lg font-bold text-gray-700 hover:text-blue-600 transition duration-300"
                 onClick={toggleMobileMenu}
               >
-                About
+                Blogs
               </a>
             </li>
             <li>
