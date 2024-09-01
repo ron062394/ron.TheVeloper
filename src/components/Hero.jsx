@@ -41,7 +41,7 @@ const Hero = () => {
 
   return (
     <motion.section 
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden relative"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden relative mt-16 sm:mt-0"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
