@@ -29,15 +29,15 @@ const Web3 = () => {
     {
       title: "Crowdfunding App",
       description: "A decentralized crowdfunding platform built on Ethereum, allowing users to fund projects without intermediaries.",
-      tech: ["Solidity", "Web3.js", "React"],
+      tech: ["Solidity", "HTML5", "CSS3", "Vanilla JS"],
       icon: <FaEthereum className="text-3xl text-purple-400" />,
       link: "https://ron062394.github.io/dapp-crowdfunding/"
     },
     {
       title: "Boxing Bonanza",
-      description: "A decentralized boxing game built on Ethereum, allowing users to participate in virtual boxing matches.",
-      tech: ["Solidity", "Web3.js", "React"],
-      icon: <SiWeb3Dotjs className="text-3xl text-green-400" />,
+      description: "A decentralized boxing game built on Ethereum, allowing users to participate in virtual boxing matches. Chainlink is used for secure and reliable data feeds.",
+      tech: ["Solidity", "Chainlink", "HTML5", "CSS3", "Vanilla JS"],
+      icon: <FaEthereum className="text-3xl text-green-400" />,
       link: "https://ron062394.github.io/dapp-boxing-bonanza/"
     },
     {
@@ -96,7 +96,7 @@ const Web3 = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-indigo-500 hover:text-indigo-600 transition-colors duration-300 mt-4"
                   >
-                    View Article <FaExternalLinkAlt className="ml-2" />
+                    View Dapp <FaExternalLinkAlt className="ml-2" />
                   </a>
                 )}
               </motion.div>
