@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaChartBar, FaDatabase, FaPython, FaRProject } from 'react-icons/fa';
-import { SiTableau, SiPowerbi } from 'react-icons/si';
+import { FaChartBar, FaDatabase, FaPython, FaFileExcel, FaFileCsv, FaBroom } from 'react-icons/fa';
+import { SiPandas } from 'react-icons/si';
 
 const DataAnalytics = () => {
   const containerVariants = {
@@ -29,9 +29,10 @@ const DataAnalytics = () => {
     { name: 'Data Visualization', icon: <FaChartBar /> },
     { name: 'SQL', icon: <FaDatabase /> },
     { name: 'Python', icon: <FaPython /> },
-    { name: 'R', icon: <FaRProject /> },
-    { name: 'Tableau', icon: <SiTableau /> },
-    { name: 'Power BI', icon: <SiPowerbi /> },
+    { name: 'Pandas', icon: <SiPandas /> },
+    { name: 'Data Cleaning', icon: <FaBroom /> },
+    { name: 'Excel', icon: <FaFileExcel /> },
+    { name: 'CSV', icon: <FaFileCsv /> },
   ];
 
   return (
@@ -89,32 +90,33 @@ const DataAnalytics = () => {
             </motion.div>
           </div>
 
-          <motion.div 
-            className="bg-white rounded-xl p-6 shadow-lg"
-            variants={itemVariants}
-          >
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">Featured Project: E-commerce Analytics Dashboard</h3>
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 md:pr-4">
-                <p className="text-gray-600 mb-4">
-                  Developed a comprehensive analytics dashboard for an e-commerce platform, 
-                  providing real-time insights into sales trends, customer behavior, and 
-                  inventory management. The dashboard leverages advanced data visualization 
-                  techniques to present complex data in an intuitive, actionable format.
-                </p>
-                <ul className="list-disc list-inside text-gray-600">
-                  <li>Increased sales by 15% through data-driven recommendations</li>
-                  <li>Optimized inventory turnover by 20%</li>
-                  <li>Improved customer retention rate by 25%</li>
-                </ul>
-              </div>
-              <div className="md:w-1/2 mt-4 md:mt-0">
-                <div className="bg-gray-300 w-full h-64 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-600">Dashboard Image Placeholder</span>
-                </div>
-              </div>
+          <div className="mb-12 flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2">
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">Learn More About Data Analytics</h3>
+              <p className="text-gray-600 mb-4">
+                If you want to know more about data analytics, here is a video that I found on YouTube. 
+                Please note that this video is not mine.
+              </p>
+              <a href="https://www.youtube.com/watch?v=yZvFH7B6gKI" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                Watch the full video
+              </a>
             </div>
-          </motion.div>
+            <div className="md:w-1/2 md:pl-8 mb-6 md:mb-0">
+              <motion.iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/yZvFH7B6gKI?si=fhuKxL3tYKRHXdcF" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="w-full aspect-video rounded-lg shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              ></motion.iframe>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
