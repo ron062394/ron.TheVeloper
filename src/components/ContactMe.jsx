@@ -126,7 +126,7 @@ const ContactMe = () => {
                 <div>
                   <button
                     type="submit"
-                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
                     Send Message
                   </button>
@@ -140,36 +140,36 @@ const ContactMe = () => {
               <h3 className="text-2xl font-bold mb-4 text-gray-800">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <FaEnvelope className="text-blue-500 mr-2" />
+                  <FaEnvelope className="text-indigo-500 mr-2" />
                   <span>ron062394@gmail.com</span>
                 </div>
                 <div className="flex items-center">
-                  <FaPhone className="text-blue-500 mr-2" />
+                  <FaPhone className="text-indigo-500 mr-2" />
                   <span>+63 920-938-7622</span>
                 </div>
                 <div className="flex items-center">
-                  <FaMapMarkerAlt className="text-blue-500 mr-2" />
+                  <FaMapMarkerAlt className="text-indigo-500 mr-2" />
                   <span>Gapan City, Nueva Ecija, 3105, Philippines</span>
                 </div>
               </div>
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                <p className="text-blue-700">
+              <div className="mt-6 p-4 bg-indigo-50 rounded-lg">
+                <p className="text-indigo-700">
                   I'm always open to new opportunities and collaborations. Whether you have a project in mind or just want to say hello, feel free to reach out!
                 </p>
               </div>
               <div className="mt-6">
                 <h4 className="text-xl font-bold mb-4 text-gray-800">Or contact me via</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-indigo-500 hover:text-indigo-700">
                     <FaLinkedin size={24} />
                   </a>
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-indigo-500 hover:text-indigo-700">
                     <FaFacebook size={24} />
                   </a>
-                  <a href="#" className="text-pink-600 hover:text-pink-800">
+                  <a href="#" className="text-indigo-500 hover:text-indigo-700">
                     <FaInstagram size={24} />
                   </a>
-                  <a href="#" className="text-black hover:text-gray-800">
+                  <a href="#" className="text-indigo-500 hover:text-indigo-700">
                     <FaTiktok size={24} />
                   </a>
                 </div>
