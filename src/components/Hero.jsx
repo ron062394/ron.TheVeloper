@@ -58,8 +58,8 @@ const Hero = () => {
         FULL STACK WEB DEVELOPER
       </motion.div>
       <div className="max-w-7xl w-full space-y-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center sm:m-24">
-          <motion.div className="space-y-6 md:space-y-8" variants={itemVariants}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+          <motion.div className="space-y-6 md:space-y-8 mt-24 md:mt-0" variants={itemVariants}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
               RON CABATUANDO
             </h1>
