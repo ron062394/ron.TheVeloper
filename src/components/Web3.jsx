@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaEthereum, FaBitcoin, FaCode } from 'react-icons/fa';
+import { FaEthereum, FaCode, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiSolidity, SiWeb3Dotjs } from 'react-icons/si';
 
 const Web3 = () => {
@@ -27,22 +27,25 @@ const Web3 = () => {
 
   const projects = [
     {
-      title: "DecentralizedX",
-      description: "A decentralized exchange platform built on Ethereum, allowing users to swap tokens without intermediaries.",
+      title: "Crowdfunding App",
+      description: "A decentralized crowdfunding platform built on Ethereum, allowing users to fund projects without intermediaries.",
       tech: ["Solidity", "Web3.js", "React"],
-      icon: <FaEthereum className="text-3xl text-purple-400" />
+      icon: <FaEthereum className="text-3xl text-purple-400" />,
+      link: "https://ron062394.github.io/dapp-crowdfunding/"
     },
     {
-      title: "NFT Marketplace",
-      description: "A marketplace for creating, buying, and selling unique digital assets as NFTs.",
-      tech: ["ERC-721", "IPFS", "Next.js"],
-      icon: <SiWeb3Dotjs className="text-3xl text-green-400" />
+      title: "Boxing Bonanza",
+      description: "A decentralized boxing game built on Ethereum, allowing users to participate in virtual boxing matches.",
+      tech: ["Solidity", "Web3.js", "React"],
+      icon: <SiWeb3Dotjs className="text-3xl text-green-400" />,
+      link: "https://ron062394.github.io/dapp-boxing-bonanza/"
     },
     {
-      title: "DeFi Yield Aggregator",
-      description: "An intelligent DeFi platform that automatically allocates funds to the highest yielding protocols.",
-      tech: ["Solidity", "Chainlink", "React"],
-      icon: <FaBitcoin className="text-3xl text-yellow-400" />
+      title: "Learn More About Web3",
+      description: "An article explaining the fundamentals and importance of Web3.",
+      tech: ["Article"],
+      icon: <FaExternalLinkAlt className="text-3xl text-blue-400" />,
+      link: "https://hbr.org/2022/05/what-is-web3"
     }
   ];
 
@@ -86,6 +89,16 @@ const Web3 = () => {
                     </span>
                   ))}
                 </div>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-indigo-500 hover:text-indigo-600 transition-colors duration-300 mt-4"
+                  >
+                    View Article <FaExternalLinkAlt className="ml-2" />
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGamepad, FaChess, FaPuzzlePiece, FaDice, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGamepad, FaChess, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Games = () => {
   const containerVariants = {
@@ -30,25 +29,13 @@ const Games = () => {
       title: "Tic-Tac-Toe",
       description: "A classic two-player game with a modern twist.",
       icon: <FaGamepad className="text-4xl text-indigo-500" />,
-      link: "https://example.com/tic-tac-toe"
+      link: "https://umbra-digital-tic-tac-toe.vercel.app/"
     },
     {
-      title: "Chess AI",
-      description: "Challenge yourself against an AI opponent in this strategic game.",
+      title: "Quiz App",
+      description: "Test your knowledge with this quiz app for frontend fundamentals.",
       icon: <FaChess className="text-4xl text-indigo-500" />,
-      link: "https://example.com/chess-ai"
-    },
-    {
-      title: "Memory Match",
-      description: "Test your memory skills with this fun and engaging card matching game.",
-      icon: <FaPuzzlePiece className="text-4xl text-indigo-500" />,
-      link: "https://example.com/memory-match"
-    },
-    {
-      title: "Dice Roller",
-      description: "A simple yet addictive dice rolling game with various game modes.",
-      icon: <FaDice className="text-4xl text-indigo-500" />,
-      link: "https://example.com/dice-roller"
+      link: "https://quiz-hub-iota.vercel.app/"
     }
   ];
 
@@ -73,7 +60,7 @@ const Games = () => {
             Check out these fun and interactive games I've created using JavaScript!
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {games.map((game, index) => (
               <motion.div
                 key={index}
@@ -103,4 +90,3 @@ const Games = () => {
 };
 
 export default Games;
-
