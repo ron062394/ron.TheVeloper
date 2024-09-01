@@ -35,7 +35,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="bg-gray-900 py-20 px-4 md:px-8 lg:px-16">
+    <section id="services" className="bg-gray-900 bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] py-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           className="text-4xl font-bold text-center mb-12 text-white"

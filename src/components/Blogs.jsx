@@ -119,8 +119,29 @@ const Blogs = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        delay: 0.3,
+        when: "beforeChildren",
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100 }
+    }
+  };
+
   return (
-    <section id="blogs" className="bg-gray-900 py-20">
+    <section id="blogs" className="bg-gray-900 bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] overflow-hidden py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 
           className="text-4xl font-bold text-center mb-6 text-white"
@@ -142,11 +163,18 @@ const Blogs = () => {
         <FeaturedVideo />
         
         <h3 className="text-3xl font-bold mb-6 text-white">Recent Articles</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {blogPosts.map((post, index) => (
-            <BlogPost key={index} {...post} />
+            <motion.div key={index} variants={itemVariants}>
+              <BlogPost {...post} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <Newsletter />
       </div>
     </section>

@@ -47,7 +47,7 @@ const Web3 = () => {
   ];
 
   return (
-    <section id="web3" className="bg-gray-900 py-20">
+    <section id="web3" className="bg-gray-900 bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
