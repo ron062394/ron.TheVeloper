@@ -4,6 +4,7 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaFigma, FaDatab
 import { SiTailwindcss, SiExpress, SiMongodb, SiDjango, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
 import { BsGit } from 'react-icons/bs';
 import { GrWorkshop } from 'react-icons/gr';
+import { FaGithub } from 'react-icons/fa';
 
 const Stacks = () => {
   const containerVariants = {
@@ -115,6 +116,8 @@ const Stacks = () => {
               </div>
             </div>
           </motion.div>
+
+
           <motion.div 
             variants={itemVariants} 
             className="bg-gray-800 text-white flex rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105"
@@ -125,6 +128,10 @@ const Stacks = () => {
                 <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
                   <BsGit size={30} className="text-[#FEDE00]" />
                   <span className="text-xs mt-1">Git</span>
+                </div>
+                <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
+                  <FaGithub size={30} className="text-[#FEDE00]" />
+                  <span className="text-xs mt-1">GitHub</span>
                 </div>
               </div>
             </div>
