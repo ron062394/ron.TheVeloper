@@ -51,7 +51,7 @@ const Hero = () => {
         <div className="h-full w-full md:w-1/2 bg-white float-none md:float-right hidden md:block"></div>
       </div>
       <motion.div 
-        className="absolute inset-0 flex items-center justify-center text-[15vw] md:text-[20vw] font-extrabold text-gray-500 whitespace-nowrap opacity-10 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-center text-[15vw] md:text-[20vw] font-extrabold text-gray-500 whitespace-nowrap opacity-10 pointer-events-none mt-24"
         variants={backgroundTextVariants}
         animate="animate"
       >
