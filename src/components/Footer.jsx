@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaTiktok, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
   const containerVariants = {
@@ -49,14 +49,17 @@ const Footer = () => {
         <motion.div variants={itemVariants} className="text-center md:text-right">
           <h4 className="text-xl font-bold mb-4">Connect</h4>
           <div className="flex justify-center md:justify-end space-x-6">
-            <motion.a whileHover={{ scale: 1.2 }} href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FEDE00]">
+            <motion.a whileHover={{ scale: 1.2 }} href="https://www.linkedin.com/in/ron-cabatuando-5a2252142/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FEDE00]">
               <FaLinkedin size={24} />
             </motion.a>
-            <motion.a whileHover={{ scale: 1.2 }} href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FEDE00]">
-              <FaGithub size={24} />
+            <motion.a whileHover={{ scale: 1.2 }} href="https://www.instagram.com/ron.theveloper/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FEDE00]">
+              <FaInstagram size={24} />
             </motion.a>
-            <motion.a whileHover={{ scale: 1.2 }} href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FEDE00]">
-              <FaTwitter size={24} />
+            <motion.a whileHover={{ scale: 1.2 }} href="https://www.tiktok.com/@ron.webdev" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FEDE00]">
+              <FaTiktok size={24} />
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.2 }} href="https://www.facebook.com/ron062394/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FEDE00]">
+              <FaFacebook size={24} />
             </motion.a>
           </div>
         </motion.div>
