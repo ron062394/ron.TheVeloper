@@ -32,7 +32,17 @@ const ProjectCard = ({ project, device, setDevice }) => {
             <div className='w-2 h-2 m-1 bg-green-500 rounded-full'></div>
           </div>
           <div className="w-full h-full">
-            <img src={project.image} alt={`${project.title} preview`} className="w-full h-full object-cover" />
+            <img 
+              src={
+                device === 'desktop' 
+                  ? project.images.desktop 
+                  : device === 'tablet' 
+                    ? project.images.tablet 
+                    : project.images.mobile
+              } 
+              alt={`${project.title} preview on ${device}`} 
+              className="w-full h-full object-cover" 
+            />
           </div>
         </motion.div>
         <div className='mt-4 flex space-x-3'>
@@ -157,7 +167,11 @@ const Projects = () => {
   const projects = [
     {
       title: "OneStep",
-      image: "https://i.imgur.com/bcwQNzL.png",
+      images: {
+        desktop: "https://i.imgur.com/bcwQNzL.png",
+        tablet: "https://i.imgur.com/tabletImage.png",
+        mobile: "https://i.imgur.com/mobileImage.png"
+      },
       description: "OneStep is a sleek shoe e-commerce platform built with React.js, Node.js, Express.js, and MongoDB. Offering a seamless shopping experience, users can explore a curated collection of shoes, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
       previewLink: "https://onestep-iota.vercel.app/",
       codeLink: "https://github.com/ron062394/Onestep-MERN",
@@ -165,17 +179,25 @@ const Projects = () => {
       features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design']
     },
     {
-      title: "Project 2",
-      image: "https://placehold.co/600x400?text=Project+2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      previewLink: "#",
-      codeLink: "#",
-      techStack: ['Tech 1', 'Tech 2', 'Tech 3'],
-      features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4']
+      title: "SerenitySuites",
+      images: {
+        desktop: "https://i.imgur.com/cBS3mIT.png",
+        tablet: "https://i.imgur.com/35AL2rm.png",
+        mobile: "https://i.imgur.com/tK8Shjj.png"
+      },
+      description: "SerenitySuites is a luxurious hotel booking website that offers a tranquil and seamless experience for travelers. With its elegant interface and comprehensive features, users can easily find and book their perfect accommodations for a peaceful stay.",
+      previewLink: "https://serenity-suites-hotel-mern-tailwind.vercel.app/",
+      codeLink: "https://github.com/ron062394/Serenity-Suites-Hotel---MERN-Tailwind",
+      techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+      features: ['Room Booking System', 'Virtual Tours', 'User Reviews', 'Loyalty Program', 'Concierge Services', 'Mobile Check-in', 'Spa Reservations', 'Dining Reservations']
     },
     {
       title: "Project 3",
-      image: "https://placehold.co/600x400?text=Project+3",
+      images: {
+        desktop: "https://placehold.co/600x400?text=Project+3+Desktop",
+        tablet: "https://placehold.co/450x600?text=Project+3+Tablet",
+        mobile: "https://placehold.co/300x600?text=Project+3+Mobile"
+      },
       description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       previewLink: "#",
       codeLink: "#",
