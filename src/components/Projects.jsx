@@ -169,8 +169,8 @@ const Projects = () => {
       title: "OneStep",
       images: {
         desktop: "https://i.imgur.com/bcwQNzL.png",
-        tablet: "https://i.imgur.com/tabletImage.png",
-        mobile: "https://i.imgur.com/mobileImage.png"
+        tablet: "https://i.imgur.com/SjzWjlT.png",
+        mobile: "https://i.imgur.com/aqhU4kV.png"
       },
       description: "OneStep is a sleek shoe e-commerce platform built with React.js, Node.js, Express.js, and MongoDB. Offering a seamless shopping experience, users can explore a curated collection of shoes, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
       previewLink: "https://onestep-iota.vercel.app/",
@@ -191,19 +191,19 @@ const Projects = () => {
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
       features: ['Room Booking System', 'Virtual Tours', 'User Reviews', 'Loyalty Program', 'Concierge Services', 'Mobile Check-in', 'Spa Reservations', 'Dining Reservations']
     },
-    {
-      title: "Project 3",
-      images: {
-        desktop: "https://placehold.co/600x400?text=Project+3+Desktop",
-        tablet: "https://placehold.co/450x600?text=Project+3+Tablet",
-        mobile: "https://placehold.co/300x600?text=Project+3+Mobile"
-      },
-      description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      previewLink: "#",
-      codeLink: "#",
-      techStack: ['Tech A', 'Tech B', 'Tech C'],
-      features: ['Feature A', 'Feature B', 'Feature C', 'Feature D']
-    },
+    // {
+    //   title: "Project 3",
+    //   images: {
+    //     desktop: "https://placehold.co/600x400?text=Project+3+Desktop",
+    //     tablet: "https://placehold.co/450x600?text=Project+3+Tablet",
+    //     mobile: "https://placehold.co/300x600?text=Project+3+Mobile"
+    //   },
+    //   description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    //   previewLink: "#",
+    //   codeLink: "#",
+    //   techStack: ['Tech A', 'Tech B', 'Tech C'],
+    //   features: ['Feature A', 'Feature B', 'Feature C', 'Feature D']
+    // },
     // Add more projects here as needed
   ];
 
