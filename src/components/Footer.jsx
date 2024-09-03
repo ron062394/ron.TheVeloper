@@ -40,10 +40,10 @@ const Footer = () => {
         <motion.div variants={itemVariants} className="text-center">
           <h4 className="text-xl font-bold mb-4">Quick Links</h4>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#FEDE00] transition duration-300">Home</a></li>
-            <li><a href="#" className="hover:text-[#FEDE00] transition duration-300">Projects</a></li>
-            <li><a href="#" className="hover:text-[#FEDE00] transition duration-300">Skills</a></li>
-            <li><a href="#" className="hover:text-[#FEDE00] transition duration-300">Contact</a></li>
+            <li><a href="#blogs" className="hover:text-[#FEDE00] transition duration-300">Blogs</a></li>
+            <li><a href="#projects" className="hover:text-[#FEDE00] transition duration-300">Projects</a></li>
+            <li><a href="#stacks" className="hover:text-[#FEDE00] transition duration-300">Technologies</a></li>
+            <li><a href="#services" className="hover:text-[#FEDE00] transition duration-300">Services</a></li>
           </ul>
         </motion.div>
         <motion.div variants={itemVariants} className="text-center md:text-right">
