@@ -160,16 +160,16 @@ const ContactMe = () => {
               <div className="mt-6">
                 <h4 className="text-xl font-bold mb-4 text-gray-800">Or contact me via</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-indigo-500 hover:text-indigo-700">
+                  <a href="https://www.linkedin.com/in/ron-cabatuando-5a2252142/" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:text-indigo-700">
                     <FaLinkedin size={24} />
                   </a>
-                  <a href="#" className="text-indigo-500 hover:text-indigo-700">
+                  <a href="https://www.facebook.com/ron062394/" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:text-indigo-700">
                     <FaFacebook size={24} />
                   </a>
-                  <a href="#" className="text-indigo-500 hover:text-indigo-700">
+                  <a href="https://www.instagram.com/ron.theveloper/" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:text-indigo-700">
                     <FaInstagram size={24} />
                   </a>
-                  <a href="#" className="text-indigo-500 hover:text-indigo-700">
+                  <a href="https://www.tiktok.com/@ron.webdev" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:text-indigo-700">
                     <FaTiktok size={24} />
                   </a>
                 </div>
