@@ -186,7 +186,7 @@ const Projects = () => {
         mobile: "https://i.imgur.com/tK8Shjj.png"
       },
       description: "SerenitySuites is a luxurious hotel booking website that offers a tranquil and seamless experience for travelers. With its elegant interface and comprehensive features, users can easily find and book their perfect accommodations for a peaceful stay.",
-      previewLink: "https://serenity-suites-hotel-mern-tailwind.vercel.app/",
+      previewLink: "https://serenity-suites-tau.vercel.app/",
       codeLink: "https://github.com/ron062394/Serenity-Suites-Hotel---MERN-Tailwind",
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
       features: ['Room Booking System', 'Virtual Tours', 'User Reviews', 'Loyalty Program', 'Concierge Services', 'Mobile Check-in', 'Spa Reservations', 'Dining Reservations']
