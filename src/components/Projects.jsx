@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaDesktop, FaTabletAlt, FaMobileAlt } from 'react-icons/fa';
-
+import { FaDesktop, FaTabletAlt, FaMobileAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Projects = () => {
   const [device, setDevice] = useState('desktop');
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const projects = [
     {
@@ -33,22 +33,37 @@ const Projects = () => {
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
       features: ['Room Booking System', 'Virtual Tours', 'User Reviews', 'Loyalty Program', 'Concierge Services', 'Mobile Check-in', 'Spa Reservations', 'Dining Reservations']
     },
-
   ];
+
+  const nextProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
 
   return (
     <section id="projects" className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4 md:px-8 lg:px-16">
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Featured Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} device={device} setDevice={setDevice} />
-        ))}
+      <div className="max-w-7xl mx-auto relative">
+        <ProjectCard project={projects[currentIndex]} device={device} setDevice={setDevice} />
+        <button
+          onClick={prevProject}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
+        >
+          <FaChevronLeft className="text-gray-600" />
+        </button>
+        <button
+          onClick={nextProject}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
+        >
+          <FaChevronRight className="text-gray-600" />
+        </button>
       </div>
     </section>
   );
 };
-
-
 
 const ProjectCard = ({ project, device, setDevice }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -65,7 +80,7 @@ const ProjectCard = ({ project, device, setDevice }) => {
     switch(device) {
       case 'desktop':
         return (
-          <div className="relative w-full max-w-[300px] aspect-[16/9] bg-gray-800 rounded-lg p-2">
+          <div className="relative w-full max-w-[600px] aspect-[16/9] bg-gray-800 rounded-lg p-2">
             <div className="absolute top-1 left-1 flex space-x-0.5">
               <div className="w-1 h-1 bg-red-500 rounded-full"></div>
               <div className="w-1 h-1 bg-yellow-500 rounded-full"></div>
@@ -83,28 +98,28 @@ const ProjectCard = ({ project, device, setDevice }) => {
         );
       case 'tablet':
         return (
-          <div className="relative w-3/4 max-w-[225px] aspect-[4/3] bg-gray-800 rounded-3xl p-2">
+          <div className="relative w-3/4 max-w-[450px] aspect-[4/3] bg-gray-800 rounded-3xl p-2">
             <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1/4 h-0.5 bg-black rounded"></div>
             <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
               <iframe 
                 src={project.previewLink}
                 title={`${project.title} preview on tablet`}
-                className="w-full h-full border-none transform scale-[0.25] origin-top-left"
-                style={{ width: '400%', height: '400%' }}
+                className="w-full h-full border-none transform scale-[0.571] origin-top-left"
+                style={{ width: '175%', height: '175%' }}
               />
             </div>
           </div>
         );
       case 'mobile':
         return (
-          <div className="relative w-1/2 max-w-[150px] aspect-[9/16] bg-gray-800 rounded-3xl p-1">
+          <div className="relative w-1/2 max-w-[300px] aspect-[9/16] bg-gray-800 rounded-3xl p-1">
             <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1/3 h-0.5 bg-black rounded"></div>
             <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
               <iframe 
                 src={project.previewLink}
                 title={`${project.title} preview on mobile`}
-                className="w-full h-full border-none transform scale-[0.25] origin-top-left"
-                style={{ width: '400%', height: '400%' }}
+                className="w-full h-full border-none transform scale-[0.571] origin-top-left"
+                style={{ width: '175%', height: '175%' }}
               />
             </div>
           </div>
@@ -116,31 +131,56 @@ const ProjectCard = ({ project, device, setDevice }) => {
 
   return (
     <motion.div 
-      className='bg-white rounded-xl p-6 shadow-lg'
+      className='bg-white rounded-xl p-6 shadow-lg flex flex-col md:flex-row'
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className='flex flex-col items-center justify-center'>
-        <motion.div 
-          className="transform transition duration-300"
-          whileHover="hover"
-          variants={imageVariants}
-        >
-          {getDeviceFrame()}
-        </motion.div>
-        <div className='mt-4 flex space-x-3'>
-          <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-xl ${device === 'desktop' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('desktop')}>
-            <FaDesktop />
-          </motion.span>
-          <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-xl ${device === 'tablet' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('tablet')}>
-            <FaTabletAlt />
-          </motion.span>
-          <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-xl ${device === 'mobile' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('mobile')}>
-            <FaMobileAlt />
-          </motion.span>
+      <div className='md:w-1/2 pr-4'>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">{project.title}</h2>
+        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+          {truncateDescription(project.description, 200)}
+          {project.description.length > 200 && (
+            <button
+              className="text-blue-600 hover:underline ml-1"
+              onClick={() => setIsModalOpen(true)}
+            >
+              More
+            </button>
+          )}
+        </p>
+        <div className='mb-4'>
+          <h3 className="text-lg font-semibold mb-2 text-gray-800">Tech Stack</h3>
+          <div className='flex flex-wrap gap-2'>
+            {project.techStack.map((tech, index) => (
+              <motion.span 
+                key={index}
+                className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium"
+                whileHover={{ scale: 1.05 }}
+              >
+                {tech}
+              </motion.span>
+            ))}
+          </div>
         </div>
-        <div className='mt-4 flex space-x-4'>
+        <div className='mb-4'>
+          <h3 className="text-lg font-semibold mb-2 text-gray-800">Key Features</h3>
+          <div className='grid grid-cols-2 gap-2'>
+            {project.features.map((feature, index) => (
+              <motion.div 
+                key={index}
+                className="flex items-center space-x-1"
+                whileHover={{ scale: 1.05 }}
+              >
+                <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span className="text-gray-700 text-sm">{feature}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <div className='flex space-x-4'>
           <motion.a 
             whileHover={{ scale: 1.05 }}
             className="flex items-center px-3 py-1 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition duration-300 text-sm"
@@ -168,49 +208,24 @@ const ProjectCard = ({ project, device, setDevice }) => {
           </motion.a>
         </div>
       </div>
-      <div className="mt-4 space-y-3">
-        <h2 className="text-2xl font-bold text-gray-800">{project.title}</h2>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          {truncateDescription(project.description, 100)}
-          {project.description.length > 100 && (
-            <button
-              className="text-blue-600 hover:underline ml-1"
-              onClick={() => setIsModalOpen(true)}
-            >
-              More
-            </button>
-          )}
-        </p>
-        <div>
-          <h3 className="text-lg font-semibold mb-2 text-gray-800">Tech Stack</h3>
-          <div className='flex flex-wrap gap-2'>
-            {project.techStack.map((tech, index) => (
-              <motion.span 
-                key={index}
-                className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium"
-                whileHover={{ scale: 1.05 }}
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold mb-2 text-gray-800">Key Features</h3>
-          <div className='grid grid-cols-2 gap-2'>
-            {project.features.map((feature, index) => (
-              <motion.div 
-                key={index}
-                className="flex items-center space-x-1"
-                whileHover={{ scale: 1.05 }}
-              >
-                <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span className="text-gray-700 text-sm">{feature}</span>
-              </motion.div>
-            ))}
-          </div>
+      <div className='md:w-1/2 mt-6 md:mt-0'>
+        <motion.div 
+          className="transform transition duration-300"
+          whileHover="hover"
+          variants={imageVariants}
+        >
+          {getDeviceFrame()}
+        </motion.div>
+        <div className='mt-4 flex justify-center space-x-3'>
+          <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-xl ${device === 'desktop' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('desktop')}>
+            <FaDesktop />
+          </motion.span>
+          <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-xl ${device === 'tablet' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('tablet')}>
+            <FaTabletAlt />
+          </motion.span>
+          <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-xl ${device === 'mobile' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('mobile')}>
+            <FaMobileAlt />
+          </motion.span>
         </div>
       </div>
       <AnimatePresence>
