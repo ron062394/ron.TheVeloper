@@ -216,7 +216,7 @@ const ProjectCard = ({ project, device, setDevice, isInView }) => {
       </div>
       <div className='md:w-1/2 mt-8 md:mt-0'>
         <motion.div 
-          className="transform transition duration-300"
+          className="transform transition duration-300 flex items-center justify-center h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
           whileHover="hover"
           variants={imageVariants}
         >
