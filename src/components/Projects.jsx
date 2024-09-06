@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { FaDesktop, FaTabletAlt, FaMobileAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Projects = () => {
   const [device, setDevice] = useState('desktop');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const projects = [
     {
@@ -46,8 +48,8 @@ const Projects = () => {
   return (
     <section id="projects" className="bg-gradient-to-br from-blue-50 to-purple-50 py-24 px-4 md:px-8 lg:px-16">
       <h2 className="text-5xl font-bold text-center mb-16 text-gray-800 tracking-tight">Featured Projects</h2>
-      <div className="max-w-7xl mx-auto relative">
-        <ProjectCard project={projects[currentIndex]} device={device} setDevice={setDevice} />
+      <div ref={ref} className="max-w-7xl mx-auto relative">
+        <ProjectCard project={projects[currentIndex]} device={device} setDevice={setDevice} isInView={isInView} />
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -69,7 +71,7 @@ const Projects = () => {
   );
 };
 
-const ProjectCard = ({ project, device, setDevice }) => {
+const ProjectCard = ({ project, device, setDevice, isInView }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const imageVariants = {
     hover: { scale: 1.05, transition: { duration: 0.3 } }
@@ -84,7 +86,7 @@ const ProjectCard = ({ project, device, setDevice }) => {
     switch(device) {
       case 'desktop':
         return (
-          <div className="relative w-full max-w-[600px] aspect-[16/9] bg-gray-800 rounded-lg p-2">
+          <div className="relative w-full max-w-[600px] aspect-[16/9] bg-gray-800 rounded-lg p-2 shadow-lg">
             <div className="absolute top-1 left-1 flex space-x-0.5">
               <div className="w-1 h-1 bg-red-500 rounded-full"></div>
               <div className="w-1 h-1 bg-yellow-500 rounded-full"></div>
@@ -102,11 +104,11 @@ const ProjectCard = ({ project, device, setDevice }) => {
         );
       case 'tablet':
         return (
-          <div className="relative w-3/4 max-w-[450px] aspect-[4/3] bg-gray-800 rounded-3xl p-2">
+          <div className="relative w-3/4 max-w-[450px] aspect-[4/3] bg-gray-800 rounded-3xl p-2 shadow-lg">
             <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1/4 h-0.5 bg-black rounded"></div>
             <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
               <iframe 
-                src={project.previewLink}
+                src={project.previewLink}QW
                 title={`${project.title} preview on tablet`}
                 className="w-full h-full border-none transform scale-[0.571] origin-top-left"
                 style={{ width: '175%', height: '175%' }}
@@ -116,7 +118,7 @@ const ProjectCard = ({ project, device, setDevice }) => {
         );
       case 'mobile':
         return (
-          <div className="relative w-1/2 max-w-[300px] aspect-[9/16] bg-gray-800 rounded-3xl p-1">
+          <div className="relative w-1/2 max-w-[300px] aspect-[9/16] bg-gray-800 rounded-3xl p-1 shadow-lg">
             <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1/3 h-0.5 bg-black rounded"></div>
             <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
               <iframe 
@@ -137,7 +139,7 @@ const ProjectCard = ({ project, device, setDevice }) => {
     <motion.div 
       className='flex flex-col md:flex-row'
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className='md:w-1/2 pr-8'>

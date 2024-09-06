@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 
@@ -9,6 +9,9 @@ const ContactMe = () => {
     email: '',
     message: ''
   });
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -61,11 +64,11 @@ const ContactMe = () => {
 
   return (
     <section id="contact-me" className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
             className="text-4xl font-bold text-center mb-6 text-gray-800"

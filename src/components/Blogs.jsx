@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaMedium, FaYoutube, FaTwitter, FaTiktok, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const BlogPost = ({ title, platform, link, date, excerpt, views }) => (
@@ -140,13 +140,16 @@ const Blogs = () => {
     }
   };
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section id="blogs" className="bg-gray-900 bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] overflow-hidden py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.h2 
           className="text-4xl font-bold text-center mb-6 text-white"
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
         >
           Latest from the Blog
@@ -154,7 +157,7 @@ const Blogs = () => {
         <motion.p
           className="text-xl text-gray-300 text-center mb-12"
           initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           Explore my latest articles, tutorials, and insights on web development and technology.
@@ -167,7 +170,7 @@ const Blogs = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
         >
           {blogPosts.map((post, index) => (
             <motion.div key={index} variants={itemVariants}>

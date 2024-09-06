@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { FaGamepad, FaChess, FaExternalLinkAlt, FaLock } from 'react-icons/fa';
 
 const Games = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImages, setCurrentImages] = useState([]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -78,11 +80,11 @@ const Games = () => {
 
   return (
     <section id="games" className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
             className="text-4xl font-bold text-center mb-6 text-gray-800"

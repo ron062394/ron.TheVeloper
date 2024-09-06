@@ -1,9 +1,12 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaChartBar, FaDatabase, FaPython, FaFileExcel, FaFileCsv, FaBroom } from 'react-icons/fa';
 import { SiPandas } from 'react-icons/si';
 
 const DataAnalytics = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -37,11 +40,11 @@ const DataAnalytics = () => {
 
   return (
     <section id="data-analytics" className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
             className="text-4xl font-bold text-center mb-6 text-gray-800"

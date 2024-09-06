@@ -1,9 +1,12 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaEthereum, FaCode, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiSolidity, SiWeb3Dotjs } from 'react-icons/si';
 
 const Web3 = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -53,9 +56,10 @@ const Web3 = () => {
     <section id="web3" className="bg-gray-900 bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
+          ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
         >
           <motion.h2 
             className="text-4xl font-bold text-center mb-6 text-white"

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaFigma, FaDatabase } from 'react-icons/fa';
 import { SiTailwindcss, SiExpress, SiMongodb, SiDjango, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
 import { BsGit } from 'react-icons/bs';
@@ -7,6 +7,9 @@ import { GrWorkshop } from 'react-icons/gr';
 import { FaGithub } from 'react-icons/fa';
 
 const Stacks = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -31,10 +34,12 @@ const Stacks = () => {
 
   return (
     <section id="stacks" className="bg-gray-900 bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] overflow-hidden py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div 
           className="text-center mb-12"
           variants={itemVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
           <h2 className="text-5xl font-extrabold text-white inline-block bg-gray-800 border-2 border-[#FEDE00] rounded-lg px-6 py-3">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FEDE00] to-[#FFE433]">
@@ -51,7 +56,7 @@ const Stacks = () => {
           className="grid grid-cols-3 grid-rows-3 gap-6 h-[32rem]"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={isInView ? "visible" : "hidden"}
         >
           <motion.div 
             variants={itemVariants} 
@@ -210,6 +215,8 @@ const Stacks = () => {
         </motion.div>
         <motion.div 
           variants={itemVariants} 
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
           className="mt-8 p-4 bg-gray-800 rounded-lg shadow-lg text-center hover:bg-gray-700 transition-colors duration-300"
         >
           <div className="flex items-center justify-center space-x-4">
