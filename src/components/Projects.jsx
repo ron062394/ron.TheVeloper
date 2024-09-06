@@ -135,7 +135,7 @@ const ProjectCard = ({ project, device, setDevice }) => {
 
   return (
     <motion.div 
-      className='bg-white rounded-xl p-8 shadow-2xl flex flex-col md:flex-row'
+      className='flex flex-col md:flex-row'
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
