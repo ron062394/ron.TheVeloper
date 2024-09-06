@@ -19,6 +19,7 @@ const Projects = () => {
       description: "SerenitySuites is a luxurious hotel booking website that offers a tranquil and seamless experience for travelers. With its elegant interface and comprehensive features, users can easily find and book their perfect accommodations for a peaceful stay.",
       previewLink: "https://serenity-suites-tau.vercel.app/",
       codeLink: "https://github.com/ron062394/Serenity-Suites-Hotel---MERN-Tailwind",
+      adminLink: "https://serenity-suites-tau.vercel.app/admin",
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
       features: ['Room Booking System', 'Virtual Tours', 'User Reviews', 'Loyalty Program', 'Concierge Services', 'Mobile Check-in', 'Spa Reservations', 'Dining Reservations']
     },
@@ -32,6 +33,7 @@ const Projects = () => {
       description: "OneStep is a sleek shoe e-commerce platform built with React.js, Node.js, Express.js, and MongoDB. Offering a seamless shopping experience, users can explore a curated collection of shoes, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
       previewLink: "https://onestep-iota.vercel.app/",
       codeLink: "https://github.com/ron062394/Onestep-MERN",
+      adminLink: "https://onestep-admin.vercel.app/",
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Vanilla CSS'],
       features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design']
     },
@@ -46,8 +48,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="bg-gradient-to-br from-blue-50 to-purple-50 py-24 px-4 md:px-8 lg:px-16">
-      <h2 className="text-5xl font-bold text-center mb-16 text-gray-800 tracking-tight">Featured Projects</h2>
+    <section id="projects" className="bg-gray-900 bg-[radial-gradient(rgba(223,223,223,0.1)_1px,transparent_1px)] bg-[length:1.1rem_1.1rem] py-24 px-4 md:px-8 lg:px-16">
+      <h2 className="text-5xl font-bold text-center mb-16 text-white tracking-tight">Featured Projects</h2>
       <div ref={ref} className="max-w-7xl mx-auto relative">
         <ProjectCard project={projects[currentIndex]} device={device} setDevice={setDevice} isInView={isInView} />
         <motion.button
@@ -108,7 +110,7 @@ const ProjectCard = ({ project, device, setDevice, isInView }) => {
             <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1/4 h-0.5 bg-black rounded"></div>
             <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
               <iframe 
-                src={project.previewLink}QW
+                src={project.previewLink}
                 title={`${project.title} preview on tablet`}
                 className="w-full h-full border-none transform scale-[0.571] origin-top-left"
                 style={{ width: '175%', height: '175%' }}
@@ -137,14 +139,14 @@ const ProjectCard = ({ project, device, setDevice, isInView }) => {
 
   return (
     <motion.div 
-      className='flex flex-col md:flex-row'
+      className='flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden'
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className='md:w-1/2 pr-8'>
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">{project.title}</h2>
-        <p className="text-gray-600 text-base leading-relaxed mb-6">
+      <div className='md:w-1/2 p-8'>
+        <h2 className="text-4xl font-bold text-gray-800 mb-6">{project.title}</h2>
+        <p className="text-gray-600 text-lg leading-relaxed mb-6">
           {truncateDescription(project.description, 200)}
           {project.description.length > 200 && (
             <button
@@ -155,13 +157,13 @@ const ProjectCard = ({ project, device, setDevice, isInView }) => {
             </button>
           )}
         </p>
-        <div className='mb-6'>
-          <h3 className="text-xl font-semibold mb-3 text-gray-800">Tech Stack</h3>
-          <div className='flex flex-wrap gap-2'>
+        <div className='mb-8'>
+          <h3 className="text-2xl font-semibold mb-4 text-gray-800">Tech Stack</h3>
+          <div className='flex flex-wrap gap-3'>
             {project.techStack.map((tech, index) => (
               <motion.span 
                 key={index}
-                className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium"
                 whileHover={{ scale: 1.05, backgroundColor: "#93C5FD" }}
               >
                 {tech}
@@ -169,19 +171,19 @@ const ProjectCard = ({ project, device, setDevice, isInView }) => {
             ))}
           </div>
         </div>
-        <div className='mb-6'>
-          <h3 className="text-xl font-semibold mb-3 text-gray-800">Key Features</h3>
-          <div className='grid grid-cols-2 gap-3'>
+        <div className='mb-8'>
+          <h3 className="text-2xl font-semibold mb-4 text-gray-800">Key Features</h3>
+          <div className='grid grid-cols-2 gap-4'>
             {project.features.map((feature, index) => (
               <motion.div 
                 key={index}
                 className="flex items-center space-x-2"
                 whileHover={{ scale: 1.05 }}
               >
-                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span className="text-gray-700 text-sm">{feature}</span>
+                <span className="text-gray-700 text-base">{feature}</span>
               </motion.div>
             ))}
           </div>
@@ -189,12 +191,12 @@ const ProjectCard = ({ project, device, setDevice, isInView }) => {
         <div className='flex space-x-4'>
           <motion.a 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition duration-300 text-sm font-semibold"
+            className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition duration-300 text-base font-semibold"
             href={project.previewLink} 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-2">
               <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
               <path fillRule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clipRule="evenodd" />
             </svg>
@@ -202,19 +204,32 @@ const ProjectCard = ({ project, device, setDevice, isInView }) => {
           </motion.a>
           <motion.a 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center px-4 py-2 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-900 transition duration-300 text-sm font-semibold"
+            className="flex items-center px-6 py-3 bg-green-600 text-white rounded-full shadow-md hover:bg-green-700 transition duration-300 text-base font-semibold"
+            href={project.adminLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-2">
+              <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+              <path fillRule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clipRule="evenodd" />
+            </svg>
+            Admin Panel
+          </motion.a>
+          <motion.a 
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center px-6 py-3 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-900 transition duration-300 text-base font-semibold"
             href={project.codeLink} 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-2">
               <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
             </svg>
             View Code
           </motion.a>
         </div>
       </div>
-      <div className='md:w-1/2 mt-8 md:mt-0'>
+      <div className='md:w-1/2 bg-gray-100 p-8'>
         <motion.div 
           className="transform transition duration-300 flex items-center justify-center h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
           whileHover="hover"
@@ -222,8 +237,8 @@ const ProjectCard = ({ project, device, setDevice, isInView }) => {
         >
           {getDeviceFrame()}
         </motion.div>
-        <div className='mt-6 flex justify-center space-x-6'>
-          <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-2xl ${device === 'desktop' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('desktop')}>
+        <div className='mt-8 flex justify-center space-x-8'>
+          <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-3xl ${device === 'desktop' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('desktop')}>
             <FaDesktop />
           </motion.span>
           <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-2xl ${device === 'tablet' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('tablet')}>

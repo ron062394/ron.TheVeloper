@@ -24,8 +24,8 @@ function App() {
         <Hero />
         <Divider />
         <Stacks />
-        <Projects />
         <Services />
+        <Projects />
         <Games />
         <Web3 />
         <DataAnalytics />
