@@ -94,8 +94,8 @@ const ProjectCard = ({ project, device, setDevice }) => {
               <iframe 
                 src={project.previewLink}
                 title={`${project.title} preview on desktop`}
-                className="w-full h-full border-none transform scale-[0.25] origin-top-left"
-                style={{ width: '400%', height: '400%' }}
+                className="w-full h-full border-none transform scale-[0.2857] origin-top-left"
+                style={{ width: '350%', height: '350%' }}
               />
             </div>
           </div>
