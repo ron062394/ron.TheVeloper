@@ -2,6 +2,54 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaDesktop, FaTabletAlt, FaMobileAlt } from 'react-icons/fa';
 
+
+const Projects = () => {
+  const [device, setDevice] = useState('desktop');
+
+  const projects = [
+    {
+      title: "OneStep",
+      images: {
+        desktop: "https://i.imgur.com/bcwQNzL.png",
+        tablet: "https://i.imgur.com/SjzWjlT.png",
+        mobile: "https://i.imgur.com/aqhU4kV.png"
+      },
+      description: "OneStep is a sleek shoe e-commerce platform built with React.js, Node.js, Express.js, and MongoDB. Offering a seamless shopping experience, users can explore a curated collection of shoes, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
+      previewLink: "https://onestep-iota.vercel.app/",
+      codeLink: "https://github.com/ron062394/Onestep-MERN",
+      techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Vanilla CSS'],
+      features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design']
+    },
+    {
+      title: "SerenitySuites",
+      images: {
+        desktop: "https://i.imgur.com/cBS3mIT.png",
+        tablet: "https://i.imgur.com/35AL2rm.png",
+        mobile: "https://i.imgur.com/tK8Shjj.png"
+      },
+      description: "SerenitySuites is a luxurious hotel booking website that offers a tranquil and seamless experience for travelers. With its elegant interface and comprehensive features, users can easily find and book their perfect accommodations for a peaceful stay.",
+      previewLink: "https://serenity-suites-tau.vercel.app/",
+      codeLink: "https://github.com/ron062394/Serenity-Suites-Hotel---MERN-Tailwind",
+      techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+      features: ['Room Booking System', 'Virtual Tours', 'User Reviews', 'Loyalty Program', 'Concierge Services', 'Mobile Check-in', 'Spa Reservations', 'Dining Reservations']
+    },
+
+  ];
+
+  return (
+    <section id="projects" className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4 md:px-8 lg:px-16">
+      <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Featured Projects</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} device={device} setDevice={setDevice} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+
+
 const ProjectCard = ({ project, device, setDevice }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const imageVariants = {
@@ -13,6 +61,59 @@ const ProjectCard = ({ project, device, setDevice }) => {
     return text.substr(0, maxLength) + '...';
   };
 
+  const getDeviceFrame = () => {
+    switch(device) {
+      case 'desktop':
+        return (
+          <div className="relative w-full max-w-[300px] aspect-[16/9] bg-gray-800 rounded-lg p-2">
+            <div className="absolute top-1 left-1 flex space-x-0.5">
+              <div className="w-1 h-1 bg-red-500 rounded-full"></div>
+              <div className="w-1 h-1 bg-yellow-500 rounded-full"></div>
+              <div className="w-1 h-1 bg-green-500 rounded-full"></div>
+            </div>
+            <div className="w-full h-full bg-white rounded overflow-hidden">
+              <iframe 
+                src={project.previewLink}
+                title={`${project.title} preview on desktop`}
+                className="w-full h-full border-none transform scale-[0.25] origin-top-left"
+                style={{ width: '400%', height: '400%' }}
+              />
+            </div>
+          </div>
+        );
+      case 'tablet':
+        return (
+          <div className="relative w-3/4 max-w-[225px] aspect-[4/3] bg-gray-800 rounded-3xl p-2">
+            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1/4 h-0.5 bg-black rounded"></div>
+            <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
+              <iframe 
+                src={project.previewLink}
+                title={`${project.title} preview on tablet`}
+                className="w-full h-full border-none transform scale-[0.25] origin-top-left"
+                style={{ width: '400%', height: '400%' }}
+              />
+            </div>
+          </div>
+        );
+      case 'mobile':
+        return (
+          <div className="relative w-1/2 max-w-[150px] aspect-[9/16] bg-gray-800 rounded-3xl p-1">
+            <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1/3 h-0.5 bg-black rounded"></div>
+            <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
+              <iframe 
+                src={project.previewLink}
+                title={`${project.title} preview on mobile`}
+                className="w-full h-full border-none transform scale-[0.25] origin-top-left"
+                style={{ width: '400%', height: '400%' }}
+              />
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <motion.div 
       className='bg-white rounded-xl p-6 shadow-lg'
@@ -22,28 +123,11 @@ const ProjectCard = ({ project, device, setDevice }) => {
     >
       <div className='flex flex-col items-center justify-center'>
         <motion.div 
-          className={`bg-white shadow-2xl rounded-lg overflow-hidden transform transition duration-300 ${device === 'desktop' ? 'w-full aspect-video' : device === 'tablet' ? 'w-3/4 aspect-[3/4]' : 'w-1/2 aspect-[9/16]'}`}
+          className="transform transition duration-300"
           whileHover="hover"
           variants={imageVariants}
         >
-          <div className='flex bg-gray-800 px-2 py-1'>
-            <div className='w-2 h-2 m-1 bg-red-500 rounded-full'></div>
-            <div className='w-2 h-2 m-1 bg-yellow-500 rounded-full'></div>
-            <div className='w-2 h-2 m-1 bg-green-500 rounded-full'></div>
-          </div>
-          <div className="w-full h-full">
-            <img 
-              src={
-                device === 'desktop' 
-                  ? project.images.desktop 
-                  : device === 'tablet' 
-                    ? project.images.tablet 
-                    : project.images.mobile
-              } 
-              alt={`${project.title} preview on ${device}`} 
-              className="w-full h-full object-cover" 
-            />
-          </div>
+          {getDeviceFrame()}
         </motion.div>
         <div className='mt-4 flex space-x-3'>
           <motion.span whileHover={{ scale: 1.2 }} className={`cursor-pointer text-xl ${device === 'desktop' ? 'text-blue-600' : 'text-gray-600'}`} onClick={() => setDevice('desktop')}>
@@ -161,62 +245,5 @@ const ProjectCard = ({ project, device, setDevice }) => {
   );
 };
 
-const Projects = () => {
-  const [device, setDevice] = useState('desktop');
-
-  const projects = [
-    {
-      title: "OneStep",
-      images: {
-        desktop: "https://i.imgur.com/bcwQNzL.png",
-        tablet: "https://i.imgur.com/SjzWjlT.png",
-        mobile: "https://i.imgur.com/aqhU4kV.png"
-      },
-      description: "OneStep is a sleek shoe e-commerce platform built with React.js, Node.js, Express.js, and MongoDB. Offering a seamless shopping experience, users can explore a curated collection of shoes, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
-      previewLink: "https://onestep-iota.vercel.app/",
-      codeLink: "https://github.com/ron062394/Onestep-MERN",
-      techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Vanilla CSS'],
-      features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design']
-    },
-    {
-      title: "SerenitySuites",
-      images: {
-        desktop: "https://i.imgur.com/cBS3mIT.png",
-        tablet: "https://i.imgur.com/35AL2rm.png",
-        mobile: "https://i.imgur.com/tK8Shjj.png"
-      },
-      description: "SerenitySuites is a luxurious hotel booking website that offers a tranquil and seamless experience for travelers. With its elegant interface and comprehensive features, users can easily find and book their perfect accommodations for a peaceful stay.",
-      previewLink: "https://serenity-suites-tau.vercel.app/",
-      codeLink: "https://github.com/ron062394/Serenity-Suites-Hotel---MERN-Tailwind",
-      techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
-      features: ['Room Booking System', 'Virtual Tours', 'User Reviews', 'Loyalty Program', 'Concierge Services', 'Mobile Check-in', 'Spa Reservations', 'Dining Reservations']
-    },
-    // {
-    //   title: "Project 3",
-    //   images: {
-    //     desktop: "https://placehold.co/600x400?text=Project+3+Desktop",
-    //     tablet: "https://placehold.co/450x600?text=Project+3+Tablet",
-    //     mobile: "https://placehold.co/300x600?text=Project+3+Mobile"
-    //   },
-    //   description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    //   previewLink: "#",
-    //   codeLink: "#",
-    //   techStack: ['Tech A', 'Tech B', 'Tech C'],
-    //   features: ['Feature A', 'Feature B', 'Feature C', 'Feature D']
-    // },
-    // Add more projects here as needed
-  ];
-
-  return (
-    <section id="projects" className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4 md:px-8 lg:px-16">
-      <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Featured Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} device={device} setDevice={setDevice} />
-        ))}
-      </div>
-    </section>
-  );
-};
 
 export default Projects;
