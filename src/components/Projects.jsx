@@ -37,6 +37,20 @@ const Projects = () => {
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Vanilla CSS'],
       features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design']
     },
+    {
+      title: "TonkotsuCorner",
+      images: {
+        desktop: "https://i.imgur.com/bcwQNzL.png",
+        tablet: "https://i.imgur.com/SjzWjlT.png",
+        mobile: "https://i.imgur.com/aqhU4kV.png"
+      },
+      description: "TonkotsuCorner is a food delivery website built with React.js, Node.js, Express.js, and MongoDB. Offering a seamless food delivery experience, users can explore a curated collection of food, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
+      previewLink: "https://tokatsu-corner.vercel.app/",
+      codeLink: "https://github.com/ron062394/TokatsuCorner---Restaurant--React-Tailwind-Firebase-",
+      adminLink: "https://tokatsu-corner.vercel.app/admin",
+      techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Vanilla CSS'],
+      features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design', 'Payment Gateway', 'Order Tracking']
+    },
   ];
 
   const nextProject = () => {
