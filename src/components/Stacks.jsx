@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaFigma, FaDatabase } from 'react-icons/fa';
-import { SiTailwindcss, SiExpress, SiMongodb, SiDjango, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
+import { SiTailwindcss, SiExpress, SiMongodb, SiDjango, SiAdobephotoshop, SiAdobeillustrator, SiFirebase } from 'react-icons/si';
 import { BsGit } from 'react-icons/bs';
 import { GrWorkshop } from 'react-icons/gr';
 import { FaGithub } from 'react-icons/fa';
@@ -185,6 +185,10 @@ const Stacks = () => {
                   <span className="text-white text-xs mt-1">ExpressJS</span>
                 </div>
                 <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
+                  <SiFirebase size={30} className="text-[#FEDE00]" />
+                  <span className="text-white text-xs mt-1">Firebase</span>
+                </div>
+                <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
                   <SiDjango size={30} className="text-[#FEDE00]" />
                   <span className="text-white text-xs mt-1">Django</span>
                 </div>
@@ -208,6 +212,10 @@ const Stacks = () => {
                 <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
                   <FaDatabase size={30} className="text-[#FEDE00]" />
                   <span className="text-xs mt-1">SQL</span>
+                </div>
+                <div className="flex flex-col items-center transition-transform duration-300 hover:scale-110">
+                  <SiFirebase size={30} className="text-[#FEDE00]" />
+                  <span className="text-xs mt-1">Firebase</span>
                 </div>
               </div>
             </div>
