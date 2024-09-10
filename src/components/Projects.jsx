@@ -19,7 +19,7 @@ const Projects = () => {
       description: "TonkotsuCorner is a food delivery website built with React, Tailwind CSS, and Firebase. Offering a seamless food delivery experience, users can explore a curated collection of food, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
       previewLink: "https://tokatsu-corner.vercel.app/",
       codeLink: "https://github.com/ron062394/TokatsuCorner---Restaurant--React-Tailwind-Firebase-",
-      adminLink: "https://tokatsu-corner.vercel.app/admin",
+      adminLink: "https://tokatsu-corner.vercel.app/admin-login",
       techStack: ['React', 'Tailwind CSS', 'Firebase'],
       features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design', 'Payment Gateway', 'Real-time Updates']
     },
