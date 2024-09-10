@@ -74,7 +74,7 @@ const Header = () => {
                 Services
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="https://drive.google.com/file/d/174XwpjwF4odmXAPYYt1m77Bg23wW9SCx/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm font-bold bg-transparent rounded-full hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-700 text-gray-700">
+              <a href="https://drive.google.com/file/d/1R_IujkIWvVke1QJOSuLKsmKbxqjh-Yhs/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm font-bold bg-transparent rounded-full hover:bg-gray-300 hover:text-gray-800 transition duration-300 border border-gray-700 text-gray-700">
                 Resume/CV
               </a>
               <a href="#contact-me" className="px-4 py-2 text-sm text-white font-bold rounded-full hover:bg-[#E06A62] transition duration-300 bg-gray-900">
