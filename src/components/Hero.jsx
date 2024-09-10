@@ -71,7 +71,7 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-[#FEDE00] text-gray-700 font-semibold rounded-full hover:bg-[#FFE433] transition duration-300 ease-in-out flex items-center justify-center space-x-2 shadow-lg">
+                <Link to="#contact-me" className="w-full sm:w-auto px-8 py-4 bg-[#FEDE00] text-gray-700 font-semibold rounded-full hover:bg-[#FFE433] transition duration-300 ease-in-out flex items-center justify-center space-x-2 shadow-lg">
                   <span>Contact me</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
