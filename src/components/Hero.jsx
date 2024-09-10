@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -71,13 +70,10 @@ const Hero = () => {
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                <Link to="#contact-me" className="w-full sm:w-auto px-8 py-4 bg-[#FEDE00] text-gray-700 font-semibold rounded-full hover:bg-[#FFE433] transition duration-300 ease-in-out flex items-center justify-center space-x-2 shadow-lg">
-                  <span>Contact me</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
-                </Link>
+                <a href="#contact-me" className="text-sm font-bold text-gray-700 hover:text-blue-600 transition duration-300 relative group">
+                  Contact me
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <a href="/Resume Ron Web Developer.pdf" download className="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition duration-300 ease-in-out flex items-center justify-center space-x-2 shadow-lg">
