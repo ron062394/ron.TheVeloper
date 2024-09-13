@@ -11,11 +11,6 @@ const Projects = () => {
   const projects = [
     {
       title: "TonkotsuCorner",
-      images: {
-        desktop: "https://i.imgur.com/bcwQNzL.png",
-        tablet: "https://i.imgur.com/SjzWjlT.png",
-        mobile: "https://i.imgur.com/aqhU4kV.png"
-      },
       description: "TonkotsuCorner is a food delivery website built with React, Tailwind CSS, and Firebase. Offering a seamless food delivery experience, users can explore a curated collection of food, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
       previewLink: "https://tokatsu-corner.vercel.app/",
       codeLink: "https://github.com/ron062394/TokatsuCorner---Restaurant--React-Tailwind-Firebase-",
@@ -25,11 +20,6 @@ const Projects = () => {
     },
     {
       title: "SerenitySuites",
-      images: {
-        desktop: "https://i.imgur.com/cBS3mIT.png",
-        tablet: "https://i.imgur.com/35AL2rm.png",
-        mobile: "https://i.imgur.com/tK8Shjj.png"
-      },
       description: "SerenitySuites is a luxurious hotel booking website that offers a tranquil and seamless experience for travelers. With its elegant interface and comprehensive features, users can easily find and book their perfect accommodations for a peaceful stay.",
       previewLink: "https://serenity-suites-tau.vercel.app/",
       codeLink: "https://github.com/ron062394/Serenity-Suites-Hotel---MERN-Tailwind",
@@ -39,17 +29,21 @@ const Projects = () => {
     },
     {
       title: "OneStep",
-      images: {
-        desktop: "https://i.imgur.com/bcwQNzL.png",
-        tablet: "https://i.imgur.com/SjzWjlT.png",
-        mobile: "https://i.imgur.com/aqhU4kV.png"
-      },
       description: "OneStep is a sleek shoe e-commerce platform built with React.js, Node.js, Express.js, and MongoDB. Offering a seamless shopping experience, users can explore a curated collection of shoes, enjoy personalized recommendations through secure authentication, and effortlessly track orders in real-time.",
       previewLink: "https://onestep-iota.vercel.app/",
       codeLink: "https://github.com/ron062394/Onestep-MERN",
       adminLink: "https://onestep-admin.vercel.app/",
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Vanilla CSS'],
       features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design']
+    },
+    {
+      title: "Supersteel",
+      description: "Supersteel is a comprehensive website for a rollforming plant specializing in roofing solutions. It showcases the company's products, services, and expertise in the steel roofing industry.",
+      previewLink: "https://supersteel.vercel.app/",
+      codeLink: "https://github.com/yourusername/supersteel",
+      adminLink: "https://supersteel.vercel.app/admin",
+      techStack: ['React.js', 'Next.js', 'Tailwind CSS'],
+      features: ['Product Catalog', 'Service Information', 'Project Gallery', 'Contact Form', 'Responsive Design', 'Coil Inventory']
     },
   ];
 
