@@ -19,6 +19,15 @@ const Projects = () => {
       features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design', 'Payment Gateway', 'Real-time Updates']
     },
     {
+      title: "Supersteel",
+      description: "Supersteel is a comprehensive website for a rollforming plant specializing in roofing solutions. It showcases the company's products, services, and expertise in the steel roofing industry.",
+      previewLink: "https://supersteel.vercel.app/",
+      codeLink: "https://github.com/yourusername/supersteel",
+      adminLink: "https://supersteel.vercel.app/admin",
+      techStack: ['React.js', 'Next.js', 'Tailwind CSS'],
+      features: ['Product Catalog', 'Service Information', 'Project Gallery', 'Contact Form', 'Responsive Design', 'Coil Inventory']
+    },
+    {
       title: "SerenitySuites",
       description: "SerenitySuites is a luxurious hotel booking website that offers a tranquil and seamless experience for travelers. With its elegant interface and comprehensive features, users can easily find and book their perfect accommodations for a peaceful stay.",
       previewLink: "https://serenity-suites-tau.vercel.app/",
@@ -35,15 +44,6 @@ const Projects = () => {
       adminLink: "https://onestep-admin.vercel.app/",
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Vanilla CSS'],
       features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Checkout Process', 'Order Tracking', 'Responsive Design']
-    },
-    {
-      title: "Supersteel",
-      description: "Supersteel is a comprehensive website for a rollforming plant specializing in roofing solutions. It showcases the company's products, services, and expertise in the steel roofing industry.",
-      previewLink: "https://supersteel.vercel.app/",
-      codeLink: "https://github.com/yourusername/supersteel",
-      adminLink: "https://supersteel.vercel.app/admin",
-      techStack: ['React.js', 'Next.js', 'Tailwind CSS'],
-      features: ['Product Catalog', 'Service Information', 'Project Gallery', 'Contact Form', 'Responsive Design', 'Coil Inventory']
     },
   ];
 
