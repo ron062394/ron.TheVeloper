@@ -22,8 +22,6 @@ const Projects = () => {
       title: "Supersteel",
       description: "Supersteel is a comprehensive website for a rollforming plant specializing in roofing solutions. It showcases the company's products, services, and expertise in the steel roofing industry.",
       previewLink: "https://supersteel.vercel.app/",
-      codeLink: "https://github.com/yourusername/supersteel",
-      adminLink: "https://supersteel.vercel.app/admin",
       techStack: ['React.js', 'Next.js', 'Tailwind CSS'],
       features: ['Product Catalog', 'Service Information', 'Project Gallery', 'Contact Form', 'Responsive Design', 'Coil Inventory']
     },
